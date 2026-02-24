@@ -116,7 +116,7 @@ export default function TasbihPage() {
   };
 
   return (
-    <div className='min-h-screen bg-[#F0F5FA] dark:bg-slate-950 text-slate-800 dark:text-slate-200 pb-10 flex flex-col overflow-hidden relative selection:bg-teal-200 dark:selection:bg-teal-900 transition-colors duration-300'>
+    <div className='min-h-screen bg-[#F0F5FA] dark:bg-slate-950 text-slate-800 dark:text-slate-200 pb-24 flex flex-col overflow-hidden relative selection:bg-teal-200 dark:selection:bg-teal-900 transition-colors duration-300'>
       {/* --- BACKGROUND AMBIENT (Glow Effect) - Disesuaikan untuk dark mode --- */}
       <div className='fixed inset-0 pointer-events-none'>
         <div

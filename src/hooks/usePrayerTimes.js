@@ -5,12 +5,12 @@ import localforage from 'localforage';
 
 export default function usePrayerTimes() {
   const [prayerTimes, setPrayerTimes] = useState(null);
-  const [userCity, setUserCity] = useState('Jakarta');
+  const [userCity, setUserCity] = useState('Surabaya');
 
   const fetchPrayerTimes = useCallback(async () => {
     try {
       const profile = await localforage.getItem('user_profile');
-      const city = profile?.location || 'Jakarta';
+      const city = profile?.location || 'Surabaya';
       setUserCity(city);
 
       const res = await fetch(`/api/schedule?city=${encodeURIComponent(city)}`);

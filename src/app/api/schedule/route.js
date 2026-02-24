@@ -13,7 +13,7 @@ dayjs.extend(customParseFormat);
 export async function GET(request) {
   // Mengambil parameter query (misal: ?city=Jakarta) di App Router
   const { searchParams } = new URL(request.url);
-  const city = searchParams.get('city') || 'Jakarta';
+  const city = searchParams.get('city') || 'Surabaya';
   const country = 'Indonesia';
 
   // ─── KONFIGURASI TAHUN & TANGGAL ───

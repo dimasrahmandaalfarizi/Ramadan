@@ -197,7 +197,7 @@ function RamatalkContent() {
         ))}
       </div>
 
-      <main className='flex-1 p-4 space-y-4 pb-28 overflow-y-auto'>
+      <main className='flex-1 p-4 space-y-4 pb-44 overflow-y-auto'>
         {messages.map((msg) => (
           <div
             key={msg.id}
@@ -253,7 +253,7 @@ function RamatalkContent() {
         <div ref={messagesEndRef} />
       </main>
 
-      <div className='fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 p-4 pb-6'>
+      <div className='fixed bottom-14 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 p-4 pb-6'>
         <form
           onSubmit={handleSend}
           className='max-w-md mx-auto relative flex items-center gap-2'

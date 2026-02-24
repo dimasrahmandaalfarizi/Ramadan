@@ -56,7 +56,7 @@ const UserProfileCard = ({ user, onEditProfile }) => {
             <span className='w-1 h-1 bg-slate-300 dark:bg-slate-700 rounded-full hidden sm:block' />
             {/* PERBAIKAN: Gunakan user.location dari lokal */}
             <span className='text-xs font-bold text-slate-500 dark:text-slate-400'>
-              {user.location || 'Jakarta'}
+              {user.location || 'Surabaya'}
             </span>
           </div>
         </div>

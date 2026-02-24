@@ -299,7 +299,7 @@ export default function KompasPage() {
         </div>
       </header>
 
-      <main className='flex-1 flex flex-col items-center justify-center px-6 pb-10 relative'>
+      <main className='flex-1 flex flex-col items-center justify-center px-6 pb-24 relative'>
         {phase === 'desktop' && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}

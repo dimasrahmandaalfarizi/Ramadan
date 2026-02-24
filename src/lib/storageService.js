@@ -14,7 +14,7 @@ export const StorageService = {
     return (
       (await localforage.getItem('profile')) || {
         name: 'Hamba Allah',
-        location_city: 'Jakarta',
+        location_city: 'Surabaya',
         app_theme: 'light',
       }
     );

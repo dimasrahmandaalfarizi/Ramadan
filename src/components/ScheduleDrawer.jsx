@@ -70,7 +70,7 @@ const SCHEDULE_CARDS = [
 
 export default function ScheduleDrawer({ isOpen, onClose, onUpdate }) {
   const { user, mutateUser } = useUser();
-  const [selectedCity, setSelectedCity] = useState('Jakarta');
+  const [selectedCity, setSelectedCity] = useState('Surabaya');
   const [searchTerm, setSearchTerm] = useState('');
   const [isPickerOpen, setIsPickerOpen] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
@@ -90,7 +90,7 @@ export default function ScheduleDrawer({ isOpen, onClose, onUpdate }) {
   // Load kota dari StorageService (IndexedDB) saat laci dibuka
   useEffect(() => {
     if (isOpen) {
-      const city = user?.location || 'Jakarta';
+      const city = user?.location || 'Surabaya';
       setSelectedCity(city);
       fetchSchedule(city);
       setIsPickerOpen(false);
