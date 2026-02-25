@@ -150,43 +150,27 @@ export default function QuranIndex() {
 
   if (view === 'bookmarks') {
     return (
-      <div className='min-h-screen bg-[#F6F9FC] dark:bg-slate-950 text-slate-800 dark:text-slate-100 pb-20'>
-        <header className='sticky top-0 z-40 bg-white/80 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800'>
-          <div className='max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-6 py-4 flex items-center gap-3'>
-            <button
-              onClick={() => setView('home')}
-              className='p-2 -ml-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors'
-            >
-              <ArrowLeft
-                size={20}
-                className='text-slate-600 dark:text-slate-300'
-              />
+      <div className='min-h-screen pb-24' style={{ background: 'var(--bg-page)' }}>
+        <header className='sticky top-0 z-40 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800'>
+          <div className='max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-5 py-3.5 flex items-center gap-3 dark:[background:rgba(13,27,46,0.9)]'>
+            <button onClick={() => setView('home')} className='p-2 -ml-2 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors'>
+              <ArrowLeft size={20} style={{ color: 'var(--text-secondary)' }} />
             </button>
-            <h1 className='font-bold text-xl flex items-center gap-2 text-[#1e3a8a] dark:text-blue-400'>
-              <Bookmark size={22} /> Ayat Disimpan
+            <h1 className='font-bold text-lg flex items-center gap-2' style={{ color: '#1e3a8a' }}>
+              <Bookmark size={20} /> Ayat Disimpan
             </h1>
           </div>
         </header>
-
         <main className='max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto p-5 md:py-6 lg:py-8 lg:px-6'>
           {bookmarks.length === 0 ? (
-            <div className='text-center py-20 opacity-50'>
-              <Bookmark
-                size={64}
-                className='mx-auto mb-4 text-slate-300 dark:text-slate-600'
-              />
-              <p className='text-base font-medium'>
-                Belum ada ayat yang disimpan.
-              </p>
+            <div className='text-center py-20' style={{ color: 'var(--text-muted)' }}>
+              <Bookmark size={48} className='mx-auto mb-3 opacity-20' />
+              <p className='text-sm font-medium'>Belum ada ayat yang disimpan.</p>
             </div>
           ) : (
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5'>
               {bookmarks.map((b, i) => (
-                <BookmarkCard
-                  key={i}
-                  bookmark={b}
-                  onRemove={handleRemoveBookmark}
-                />
+                <BookmarkCard key={i} bookmark={b} onRemove={handleRemoveBookmark} />
               ))}
             </div>
           )}
@@ -196,74 +180,61 @@ export default function QuranIndex() {
   }
 
   return (
-    <div className='min-h-screen bg-[#F6F9FC] dark:bg-slate-950 text-slate-800 dark:text-slate-100 pb-20 selection:bg-blue-200 dark:selection:bg-blue-800 relative'>
-      <header className='sticky top-0 z-30 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800'>
-        <div className='max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-6 py-4'>
-          <div className='flex items-center justify-between mb-4 lg:mb-5'>
-            <div className='flex items-center gap-4'>
-              <button
-                onClick={() => router.push('/')}
-                className='p-2 -ml-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors'
-              >
-                <ArrowLeft
-                  size={20}
-                  className='text-slate-600 dark:text-slate-300'
-                />
-              </button>
-              <h1 className='font-bold text-xl flex items-center gap-2 text-[#1e3a8a] dark:text-blue-400'>
-                <BookOpen size={24} /> Al-Qur'an
-              </h1>
-            </div>
-
+    <div className='min-h-screen pb-24 relative' style={{ background: 'var(--bg-page)' }}>
+      {/* Header */}
+      <header className='sticky top-0 z-30 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800'>
+        <div className='dark:!bg-[rgba(13,27,46,0.95)] max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 pt-3 pb-2'>
+          {/* Row 1: back + title + actions */}
+          <div className='flex items-center justify-between mb-2'>
             <div className='flex items-center gap-2'>
-              <button
-                onClick={() => setIsHeatmapOpen(true)}
-                className='p-2 bg-blue-50 dark:bg-blue-500/20 text-[#1e3a8a] dark:text-blue-300 rounded-full hover:bg-blue-100 dark:hover:bg-blue-500/30 transition-colors'
-              >
-                <BarChart2 size={20} />
+              <button onClick={() => router.push('/')} className='p-1.5 -ml-1.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors'>
+                <ArrowLeft size={20} style={{ color: 'var(--text-secondary)' }} />
               </button>
-              <button
-                onClick={() => setView('bookmarks')}
-                className='p-2 bg-blue-50 dark:bg-blue-500/20 text-[#1e3a8a] dark:text-blue-300 rounded-full hover:bg-blue-100 dark:hover:bg-blue-500/30 transition-colors'
-              >
-                <Bookmark size={20} />
+              <div className='flex items-center gap-1.5'>
+                <span className='w-7 h-7 rounded-lg flex items-center justify-center' style={{ background: 'linear-gradient(135deg,#1e3a8a,#312e81)' }}>
+                  <BookOpen size={14} className='text-white' />
+                </span>
+                <h1 className='font-extrabold text-base' style={{ color: '#1e3a8a' }}>Al-Qur&apos;an</h1>
+              </div>
+            </div>
+            <div className='flex items-center gap-1.5'>
+              <button onClick={() => setIsHeatmapOpen(true)} className='p-1.5 rounded-xl transition-colors' style={{ background: 'rgba(30,58,138,0.08)' }}>
+                <BarChart2 size={16} style={{ color: '#1e3a8a' }} />
+              </button>
+              <button onClick={() => setView('bookmarks')} className='p-1.5 rounded-xl transition-colors' style={{ background: 'rgba(30,58,138,0.08)' }}>
+                <Bookmark size={16} style={{ color: '#1e3a8a' }} />
               </button>
             </div>
           </div>
 
-          <div className='flex flex-col md:flex-row gap-3 lg:gap-4'>
+          {/* Row 2: Search + Tab toggle */}
+          <div className='flex gap-2'>
             <div className='relative flex-1'>
-              <Search
-                className='absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 dark:text-slate-500'
-                size={18}
-              />
+              <Search className='absolute left-3 top-1/2 -translate-y-1/2' size={15} style={{ color: 'var(--text-muted)' }} />
               <input
                 type={activeTab === 'juz' ? 'number' : 'text'}
-                placeholder={
-                  activeTab === 'surah'
-                    ? 'Cari nama surah atau arti...'
-                    : 'Ketik angka Juz (1-30)...'
-                }
-                className='w-full pl-12 pr-4 py-3 bg-slate-100 dark:bg-slate-800 rounded-2xl border-none focus:ring-2 focus:ring-[#1e3a8a] dark:focus:ring-blue-400 outline-none text-sm transition-all disabled:opacity-50'
+                placeholder={activeTab === 'surah' ? 'Cari surah...' : 'Juz 1-30...'}
+                className='w-full pl-9 pr-3 py-2 rounded-xl text-sm outline-none transition-all'
+                style={{ background: 'var(--bg-subtle)', color: 'var(--text-primary)', border: '1.5px solid transparent' }}
+                onFocus={e => e.target.style.border = '1.5px solid #1e3a8a'}
+                onBlur={e => e.target.style.border = '1.5px solid transparent'}
                 onChange={handleSearchChange}
                 value={searchQuery}
                 min={activeTab === 'juz' ? 1 : undefined}
                 max={activeTab === 'juz' ? 30 : undefined}
               />
             </div>
-            <div className='flex p-1 bg-slate-100 dark:bg-slate-800 rounded-xl shrink-0 md:w-64'>
+            {/* Surah / Juz toggle */}
+            <div className='flex p-0.5 rounded-xl shrink-0' style={{ background: 'var(--bg-subtle)' }}>
               {TABS.map(({ key, label }) => (
                 <button
                   key={key}
-                  onClick={() => {
-                    setActiveTab(key);
-                    setSearchQuery('');
-                  }}
-                  className={`flex-1 py-2 text-[13px] font-bold rounded-lg transition-all ${
-                    activeTab === key
-                      ? 'bg-white dark:bg-slate-900 text-[#1e3a8a] dark:text-blue-300 shadow-sm'
-                      : 'text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200'
-                  }`}
+                  onClick={() => { setActiveTab(key); setSearchQuery(''); }}
+                  className='px-3 py-1.5 text-xs font-bold rounded-[10px] transition-all'
+                  style={activeTab === key
+                    ? { background: '#1e3a8a', color: 'white', boxShadow: '0 2px 8px rgba(30,58,138,0.3)' }
+                    : { color: 'var(--text-muted)' }
+                  }
                 >
                   {label}
                 </button>
@@ -273,37 +244,27 @@ export default function QuranIndex() {
         </div>
       </header>
 
-      <main className='max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto p-5 md:py-6 lg:py-8 lg:px-6'>
-        {/* BANNER PENGINGAT 3 HARI */}
+      <main className='max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-5 py-5 md:py-6 lg:py-8'>
+        {/* reminder */}
         {!isSearching && reminderData && (
-          <div className='bg-amber-50 dark:bg-amber-500/10 border border-amber-200 dark:border-amber-500/20 rounded-2xl p-4 mb-5 flex items-start gap-3 relative overflow-hidden animate-in fade-in slide-in-from-top-4 duration-500 shadow-sm'>
-            <div className='p-2 bg-amber-100 dark:bg-amber-500/20 text-amber-600 dark:text-amber-400 rounded-xl shrink-0'>
-              <AlertCircle size={20} />
+          <div className='rounded-2xl p-4 mb-5 flex items-start gap-3 relative overflow-hidden' style={{ background: 'rgba(245,158,11,0.08)', border: '1px solid rgba(245,158,11,0.2)' }}>
+            <div className='p-2 rounded-xl text-amber-600' style={{ background: 'rgba(245,158,11,0.15)' }}>
+              <AlertCircle size={18} />
             </div>
             <div className='pr-6'>
-              <h3 className='font-bold text-amber-800 dark:text-amber-200 text-sm mb-1'>
-                Jangan Lupa Sempatkan Waktu Ya!
-              </h3>
-              <p className='text-xs text-amber-700/90 dark:text-amber-300/90 leading-relaxed font-medium'>
-                Dalam 3 hari kebelakang, rata-rata bacamu hanya{' '}
-                <strong>{formatAvgTime(reminderData.avgSeconds)}</strong>.
-                {reminderData.avgSeconds < 60
-                  ? ' Yuk, sempatkan tilawah hari ini meski hanya satu ayat, insyaAllah berkah. Semangat!'
-                  : ' Kelihatannya kamu lagi sibuk ya? Sempatkan waktu sedikit hari ini buat tilawah yuk!'}
+              <h3 className='font-bold text-sm mb-1' style={{ color: 'var(--text-primary)' }}>Jangan Lupa Sempatkan Waktu Ya!</h3>
+              <p className='text-xs leading-relaxed' style={{ color: 'var(--text-secondary)' }}>
+                Rata-rata bacamu hanya <strong>{formatAvgTime(reminderData.avgSeconds)}</strong>. Sempatkan tilawah hari ini!
               </p>
             </div>
-            <button
-              onClick={() => setReminderData(null)}
-              className='absolute top-3 right-3 p-1 text-amber-500 hover:bg-amber-100 dark:hover:bg-amber-500/30 rounded-lg transition-colors'
-            >
-              <X size={16} />
+            <button onClick={() => setReminderData(null)} className='absolute top-3 right-3 p-1 rounded-lg text-amber-500 hover:bg-amber-100 transition-colors'>
+              <X size={14} />
             </button>
           </div>
         )}
 
-        {/* CONTAINER LAST READ & KHATAM PLAN */}
         {!isSearching && (
-          <div className='flex flex-col md:flex-row items-stretch gap-4 lg:gap-5 mb-5 lg:mb-6 mt-2'>
+          <div className='flex flex-col md:flex-row items-stretch gap-4 mb-5'>
             <div className='w-full md:w-4/12 flex [&>*]:w-full [&>*]:h-full'>
               <LastReadBanner lastRead={lastRead} onContinue={handleContinue} />
             </div>
@@ -313,67 +274,71 @@ export default function QuranIndex() {
           </div>
         )}
 
-        {/* TAB SURAH */}
+        {/* Surah tab */}
         {activeTab === 'surah' && (
-          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-4'>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2.5 md:gap-3'>
             {loading ? (
               [...Array(12)].map((_, i) => (
-                <div
-                  key={i}
-                  className='h-20 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-2xl animate-pulse'
-                />
+                <div key={i} className='h-[68px] skeleton rounded-2xl' />
               ))
             ) : filteredSurahs.length > 0 ? (
               filteredSurahs.map((s) => (
-                <div
+                <button
                   key={s.nomor}
                   onClick={() => router.push(`/quran/surah/${s.nomor}`)}
-                  className='bg-white dark:bg-slate-900 p-4 lg:p-5 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-[#1e3a8a] dark:hover:border-blue-400 transition-all cursor-pointer flex items-center justify-between group'
+                  className='w-full text-left rounded-2xl px-3 py-3 flex items-center justify-between group active:scale-[0.98] transition-all duration-200 hover:-translate-y-0.5'
+                  style={{ background: 'var(--bg-card)', border: '1.5px solid var(--border-card)', boxShadow: 'var(--shadow-card)' }}
                 >
-                  <div className='flex items-center gap-4'>
-                    <div className='w-10 h-10 lg:w-11 lg:h-11 rounded-full bg-blue-50 dark:bg-blue-500/20 flex items-center justify-center text-xs lg:text-sm font-bold text-slate-400 dark:text-slate-300 group-hover:bg-[#1e3a8a] group-hover:text-white transition-colors'>
+                  <div className='flex items-center gap-2.5 min-w-0'>
+                    {/* Number badge */}
+                    <span
+                      className='w-9 h-9 shrink-0 rounded-xl flex items-center justify-center text-xs font-extrabold'
+                      style={{ background: 'linear-gradient(135deg,#1e3a8a,#312e81)', color: 'white', boxShadow: '0 3px 8px rgba(30,58,138,0.3)' }}
+                    >
                       {s.nomor}
-                    </div>
-                    <div>
-                      <h3 className='font-bold text-slate-800 dark:text-slate-100 text-sm lg:text-base group-hover:text-[#1e3a8a] dark:group-hover:text-blue-400 transition-colors'>
-                        {s.namaLatin}
-                      </h3>
-                      <p className='text-[10px] lg:text-xs font-medium text-slate-400 dark:text-slate-500 uppercase tracking-wider mt-0.5'>
-                        {s.tempatTurun} • {s.jumlahAyat} Ayat
+                    </span>
+                    <div className='min-w-0'>
+                      <h3 className='font-bold text-sm truncate' style={{ color: 'var(--text-primary)' }}>{s.namaLatin}</h3>
+                      <p className='text-[10px] font-medium uppercase tracking-wide mt-0.5 truncate' style={{ color: 'var(--text-muted)' }}>
+                        {s.tempatTurun} · {s.jumlahAyat} Ayat
                       </p>
                     </div>
                   </div>
-                  <div className='text-xl lg:text-2xl font-arabic text-[#1e3a8a] dark:text-blue-400 opacity-80 group-hover:opacity-100 transition-opacity'>
+                  {/* Arabic name — hidden on very small screens if name is long */}
+                  <span
+                    className='text-base font-arabic shrink-0 ml-2'
+                    style={{ color: '#1e3a8a', opacity: 0.75, maxWidth: '80px', overflow: 'hidden', textOverflow: 'clip', whiteSpace: 'nowrap' }}
+                  >
                     {s.nama}
-                  </div>
-                </div>
+                  </span>
+                </button>
               ))
             ) : (
-              <div className='text-center py-10 lg:col-span-full'>
-                <p className='text-slate-500 dark:text-slate-400 text-sm'>
-                  Surah tidak ditemukan.
-                </p>
+              <div className='text-center py-10 col-span-full' style={{ color: 'var(--text-muted)' }}>
+                <p className='text-sm'>Surah tidak ditemukan.</p>
               </div>
             )}
           </div>
         )}
 
-        {/* TAB JUZ */}
+        {/* Juz tab */}
         {activeTab === 'juz' && (
-          <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 md:gap-4'>
+          <div className='grid grid-cols-5 md:grid-cols-6 lg:grid-cols-8 gap-2 md:gap-3'>
             {JUZ_LIST.map((juz) => (
-              <div
+              <button
                 key={juz}
                 onClick={() => router.push(`/quran/juz/${juz}`)}
-                className='bg-white dark:bg-slate-900 p-5 lg:p-6 rounded-2xl border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-md hover:-translate-y-1 hover:border-[#1e3a8a] dark:hover:border-blue-400 transition-all cursor-pointer flex flex-col items-center justify-center gap-2 lg:gap-3 group'
+                className='rounded-2xl py-3 px-2 flex flex-col items-center justify-center gap-1.5 group active:scale-95 transition-all duration-200 hover:-translate-y-1'
+                style={{ background: 'var(--bg-card)', border: '1.5px solid var(--border-card)', boxShadow: 'var(--shadow-card)' }}
               >
-                <div className='w-12 h-12 lg:w-14 lg:h-14 rounded-full bg-blue-50 dark:bg-blue-500/20 text-[#1e3a8a] dark:text-blue-300 flex items-center justify-center group-hover:scale-110 transition-transform'>
-                  <Book size={24} />
-                </div>
-                <h3 className='font-bold text-slate-800 dark:text-slate-100 group-hover:text-[#1e3a8a] dark:group-hover:text-blue-400 lg:text-lg'>
-                  Juz {juz}
-                </h3>
-              </div>
+                <span
+                  className='w-8 h-8 rounded-xl flex items-center justify-center transition-all group-hover:scale-110 text-xs font-extrabold text-white'
+                  style={{ background: 'linear-gradient(135deg,#1e3a8a,#312e81)', boxShadow: '0 3px 8px rgba(30,58,138,0.3)' }}
+                >
+                  {juz}
+                </span>
+                <span className='text-[10px] font-bold' style={{ color: 'var(--text-secondary)' }}>Juz</span>
+              </button>
             ))}
           </div>
         )}

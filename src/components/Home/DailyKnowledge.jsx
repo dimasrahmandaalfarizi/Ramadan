@@ -3,37 +3,37 @@
 import { ChevronRight, Lightbulb } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 
-/**
- * DailyKnowledge — kartu materi harian berdasarkan hari Hijriah.
- * Navigasi ke halaman /study/:day.
- */
 const DailyKnowledge = ({ hijriDay, dailyTopic }) => {
   const router = useRouter();
 
   return (
     <div
       onClick={() => router.push(`/study/${hijriDay}`)}
-      className='bg-white dark:bg-slate-900 rounded-[2rem] p-5 md:p-6 lg:p-6 group shadow-sm border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer flex items-center justify-between h-full'
+      className='relative rounded-[2rem] p-5 md:p-6 overflow-hidden cursor-pointer group active:scale-[0.98] transition-all duration-300 hover:-translate-y-1'
+      style={{
+        background: 'linear-gradient(135deg, #78350f 0%, #92400e 50%, #b45309 100%)',
+        boxShadow: '0 8px 32px rgba(180,83,9,0.3)',
+      }}
     >
-      <div>
-        <div className='flex items-center gap-2 mb-2'>
-          <span className='bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 p-1.5 rounded-lg'>
-            <Lightbulb size={16} />
-          </span>
-          <span className='text-[10px] md:text-xs lg:text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider'>
-            Daily Knowledge
-          </span>
-        </div>
-        <h3 className='font-bold text-slate-800 dark:text-slate-100 text-sm md:text-base lg:text-base group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors'>
-          {dailyTopic?.title}
-        </h3>
+      {/* Ambient glow */}
+      <div className='absolute -bottom-8 -right-8 w-36 h-36 rounded-full pointer-events-none opacity-20'
+        style={{ background: 'radial-gradient(circle, #fcd34d 0%, transparent 70%)' }} />
+
+      <div className='relative z-10 flex items-center gap-2 mb-3'>
+        <span className='p-1.5 rounded-xl bg-white/20'>
+          <Lightbulb size={16} className='text-amber-200' />
+        </span>
+        <span className='text-[10px] uppercase tracking-widest font-bold text-amber-200/80'>
+          Daily Knowledge
+        </span>
       </div>
 
-      <div className='bg-slate-50 dark:bg-slate-800 p-3 rounded-full group-hover:bg-amber-50 dark:group-hover:bg-amber-900/30 transition-colors shrink-0'>
-        <ChevronRight
-          size={20}
-          className='text-slate-400 dark:text-slate-500 group-hover:text-amber-500 dark:group-hover:text-amber-400'
-        />
+      <h3 className='relative z-10 font-bold text-white text-sm md:text-base leading-snug'>
+        {dailyTopic?.title}
+      </h3>
+
+      <div className='relative z-10 mt-3 flex items-center gap-1 text-xs font-semibold text-amber-200/70'>
+        Baca selengkapnya <ChevronRight size={13} />
       </div>
     </div>
   );

@@ -74,10 +74,10 @@ export default function AyatCard({
       }`}
     >
       {/* HEADER */}
-      <div className='flex items-center justify-between px-5 md:px-7 py-3 md:py-4 border-b border-slate-50 dark:border-slate-700/50'>
-        <div className='flex items-center gap-2 md:gap-3'>
+      <div className='flex items-center justify-between px-4 py-2.5 md:px-6 md:py-3.5 border-b border-slate-50 dark:border-slate-700/50'>
+        <div className='flex items-center gap-2'>
           <div
-            className={`w-9 h-9 md:w-10 md:h-10 rounded-xl flex items-center justify-center text-xs md:text-sm font-black ${
+            className={`w-8 h-8 md:w-9 md:h-9 rounded-lg md:rounded-xl flex items-center justify-center text-xs font-black ${
               isLastRead
                 ? 'bg-[#1e3a8a] dark:bg-blue-700 text-white'
                 : 'bg-blue-50 dark:bg-blue-950/50 text-[#1e3a8a] dark:text-blue-400'
@@ -92,39 +92,39 @@ export default function AyatCard({
           )}
         </div>
 
-        <div className='flex items-center gap-1 md:gap-2'>
+        <div className='flex items-center gap-0.5 md:gap-1'>
           <button
             onClick={() => onPlayAudio(ayat)}
-            className={`p-2 rounded-full transition-colors ${
+            className={`p-1.5 md:p-2 rounded-full transition-colors ${
               isPlaying
                 ? 'bg-[#1e3a8a] dark:bg-blue-700 text-white'
                 : 'text-slate-400 dark:text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700'
             }`}
           >
-            {isPlaying ? <Pause size={16} /> : <Play size={16} />}
+            {isPlaying ? <Pause size={14} /> : <Play size={14} />}
           </button>
           <button
             onClick={() => onCopy(ayat, surahName)}
-            className='p-2 rounded-full text-slate-400 dark:text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors'
+            className='p-1.5 md:p-2 rounded-full text-slate-400 dark:text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors'
           >
             {copiedId === copyKey ? (
-              <Check size={16} className='text-emerald-500' />
+              <Check size={14} className='text-emerald-500' />
             ) : (
-              <Copy size={16} />
+              <Copy size={14} />
             )}
           </button>
           <button
             onClick={() => onBookmark(ayat)}
-            className={`p-2 rounded-full transition-colors ${
+            className={`p-1.5 md:p-2 rounded-full transition-colors ${
               isBookmarked
                 ? 'text-amber-500 bg-amber-50 dark:bg-amber-900/30'
                 : 'text-slate-400 dark:text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-700'
             }`}
           >
             {isBookmarked ? (
-              <BookmarkCheck size={16} />
+              <BookmarkCheck size={14} />
             ) : (
-              <Bookmark size={16} />
+              <Bookmark size={14} />
             )}
           </button>
         </div>

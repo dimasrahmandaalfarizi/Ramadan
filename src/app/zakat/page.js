@@ -25,32 +25,20 @@ export default function ZakatPage() {
   };
 
   return (
-    <div className='min-h-screen bg-[#F6F9FC] dark:bg-slate-950 text-slate-800 dark:text-slate-200 pb-24 transition-colors duration-300'>
-      {/* Ambient background blur */}
-      <div className='fixed inset-0 pointer-events-none -z-10 overflow-hidden'>
-        <div className='absolute -top-40 -right-40 w-96 h-96 bg-blue-100/40 dark:bg-blue-900/20 rounded-full blur-3xl' />
-        <div className='absolute bottom-0 -left-20 w-80 h-80 bg-indigo-100/30 dark:bg-indigo-900/20 rounded-full blur-3xl' />
-      </div>
+    <div className='min-h-screen pb-24' style={{ background: 'var(--bg-page)' }}>
 
-      {/* Header */}
-      <header className='sticky top-0 z-40 bg-[#F6F9FC]/90 dark:bg-slate-950/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 px-5 py-4'>
+      <header className='sticky top-0 z-40 px-5 py-3.5 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800'>
         <div className='max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto flex items-center gap-3'>
-          <button
-            onClick={() => router.push('/')}
-            className='w-9 h-9 rounded-xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-700 shadow-sm dark:shadow-slate-900 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors'
-          >
-            <ArrowLeft
-              size={17}
-              className='text-slate-600 dark:text-slate-400'
-            />
+          <button onClick={() => router.push('/')} className='p-2 -ml-2 rounded-xl hover:bg-slate-100 transition-colors'>
+            <ArrowLeft size={18} style={{ color: 'var(--text-secondary)' }} />
           </button>
-          <div className='flex-1'>
-            <h1 className='font-bold text-base md:text-lg text-slate-800 dark:text-slate-200 leading-tight'>
-              Kalkulator Zakat
-            </h1>
-            <p className='text-[10px] md:text-xs text-slate-400 dark:text-slate-500 font-medium'>
-              Hitung zakat dengan mudah & akurat
-            </p>
+          <div className='flex items-center gap-2'>
+            <span className='w-8 h-8 rounded-xl flex items-center justify-center text-white'
+              style={{ background: 'linear-gradient(135deg,#065f46,#059669)' }}>💰</span>
+            <div>
+              <h1 className='font-extrabold text-sm leading-tight' style={{ color: 'var(--text-primary)' }}>Kalkulator Zakat</h1>
+              <p className='text-[10px]' style={{ color: 'var(--text-muted)' }}>Hitung zakat dengan mudah & akurat</p>
+            </div>
           </div>
         </div>
       </header>

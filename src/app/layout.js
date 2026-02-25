@@ -1,8 +1,13 @@
 import './globals.css';
-import { Inter } from 'next/font/google';
+import { Plus_Jakarta_Sans } from 'next/font/google';
 import BottomNav from '@/components/BottomNav';
 
-const inter = Inter({ subsets: ['latin'] });
+const plusJakarta = Plus_Jakarta_Sans({
+  subsets: ['latin'],
+  variable: '--font-plus-jakarta',
+  weight: ['400', '500', '600', '700', '800'],
+  display: 'swap',
+});
 
 export const metadata = {
   title: 'MyRamadhan - Pendamping Ibadah',
@@ -29,8 +34,8 @@ export const viewport = {
   maximumScale: 1,
   userScalable: false,
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#F6F9FC' },
-    { media: '(prefers-color-scheme: dark)', color: '#020617' },
+    { media: '(prefers-color-scheme: light)', color: '#F4F7FB' },
+    { media: '(prefers-color-scheme: dark)', color: '#050C1A' },
   ],
 };
 
@@ -39,7 +44,7 @@ export default function RootLayout({ children }) {
     <html lang='id' className='light' suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${inter.className} min-h-screen bg-[#F6F9FC] dark:bg-slate-950 text-slate-800 dark:text-slate-100 selection:bg-blue-200 dark:selection:bg-blue-800 transition-colors duration-300 antialiased`}
+        className={`${plusJakarta.variable} ${plusJakarta.className} min-h-screen antialiased`}
       >
         <script
           dangerouslySetInnerHTML={{

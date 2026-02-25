@@ -104,12 +104,7 @@ export default function MyRamadhanHome() {
   if (!mounted) return null;
 
   return (
-    <main className='min-h-screen bg-[#F6F9FC] dark:bg-slate-950 text-slate-800 dark:text-slate-100 pb-16 selection:bg-blue-200 dark:selection:bg-blue-800 transition-colors duration-300'>
-      {/* SECTION: BACKGROUND DECORATION */}
-      <div className='fixed inset-0 -z-10 pointer-events-none overflow-hidden'>
-        <div className='absolute top-[-10%] left-[-10%] w-[500px] h-[500px] bg-blue-100/50 dark:bg-blue-900/20 rounded-full blur-3xl opacity-60' />
-        <div className='absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-indigo-100/50 dark:bg-indigo-900/20 rounded-full blur-3xl opacity-60' />
-      </div>
+    <main className='min-h-screen pb-20 transition-colors duration-300' style={{ background: 'var(--bg-page)' }}>
 
       {/* SECTION: MAIN CONTENT CONTAINER */}
       <div className='w-full max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto p-5 md:py-8 lg:py-10 lg:px-8'>

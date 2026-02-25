@@ -13,7 +13,7 @@ const LastReadBanner = ({ lastRead, onContinue }) => {
   if (!lastRead) return null;
 
   return (
-    <div className='mb-6 lg:mb-8 md:max-w-2xl lg:max-w-2xl md:mx-auto bg-gradient-to-r from-[#1e3a8a] to-[#312e81] rounded-[2rem] p-6 lg:p-8 text-white shadow-lg relative overflow-hidden'>
+    <div className='bg-gradient-to-r from-[#1e3a8a] to-[#312e81] rounded-[2rem] p-5 lg:p-6 text-white shadow-lg relative overflow-hidden h-full'>
       {/* Dekorasi ikon buku */}
       <BookOpen className='absolute -right-4 -bottom-4 opacity-10' size={120} />
 

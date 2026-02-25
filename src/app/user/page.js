@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { ArrowLeft, Smartphone } from 'lucide-react';
+import { ArrowLeft, Smartphone, User } from 'lucide-react';
 import localforage from 'localforage';
 
 import useUser from '@/hooks/useUser';
@@ -155,32 +155,29 @@ export default function UserProfile() {
 
   if (loading) {
     return (
-      <div className='min-h-screen bg-[#F6F9FC] dark:bg-slate-950 flex justify-center items-center'>
-        <div className='w-8 h-8 border-4 border-[#1e3a8a] dark:border-blue-400 border-t-transparent rounded-full animate-spin' />
+      <div className='min-h-screen flex justify-center items-center' style={{ background: 'var(--bg-page)' }}>
+        <div className='w-8 h-8 border-4 border-[#1e3a8a] border-t-transparent rounded-full animate-spin' />
       </div>
     );
   }
 
   return (
-    <div className='min-h-screen bg-[#F6F9FC] dark:bg-slate-950 text-slate-800 dark:text-slate-100 pb-24 transition-colors duration-300'>
-      <header className='sticky top-0 z-40 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 px-6 py-4'>
-        <div className='max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto flex items-center gap-3 w-full'>
-          <button
-            onClick={() => router.push('/')}
-            className='p-2 -ml-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors'
-          >
-            <ArrowLeft
-              size={20}
-              className='text-slate-600 dark:text-slate-300'
-            />
+    <div className='min-h-screen pb-24 transition-colors duration-300' style={{ background: 'var(--bg-page)' }}>
+      <header className='sticky top-0 z-40 px-5 py-3.5 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800'>
+        <div className='max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto flex items-center gap-2 w-full'>
+          <button onClick={() => router.push('/')} className='p-1.5 -ml-1.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors'>
+            <ArrowLeft size={20} style={{ color: 'var(--text-secondary)' }} />
           </button>
-          <h1 className='font-bold text-xl text-[#1e3a8a] dark:text-white'>
-            User Profile
-          </h1>
+          <div className='flex items-center gap-1.5'>
+            <span className='w-7 h-7 rounded-lg flex items-center justify-center' style={{ background: 'linear-gradient(135deg,#1e3a8a,#312e81)' }}>
+              <User size={14} className='text-white' />
+            </span>
+            <h1 className='font-extrabold text-base' style={{ color: '#1e3a8a' }}>Profil Saya</h1>
+          </div>
         </div>
       </header>
 
-      <main className='max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto p-5 space-y-6 mt-2'>
+      <main className='max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto p-5 space-y-5 mt-2'>
         <UserProfileCard
           user={user}
           profileData={user}
@@ -188,37 +185,32 @@ export default function UserProfile() {
           onEditProfile={() => setActiveDrawer(DRAWERS.EDIT_PROFIL)}
         />
 
-        <div className='flex flex-col md:grid md:grid-cols-2 gap-6 items-start'>
-          <div className='space-y-6 w-full order-1'>
+        <div className='flex flex-col md:grid md:grid-cols-2 gap-5 items-start'>
+          <div className='space-y-5 w-full order-1'>
             <PreferensiMenuSection
               theme={theme}
               onOpenTema={() => setActiveDrawer(DRAWERS.TEMA)}
               onOpenData={() => setActiveDrawer(DRAWERS.DATA_MANAGEMENT)}
               onOpenReset={() => setActiveDrawer(DRAWERS.CONFIRM_RESET)}
             />
-            <div className='w-full'>
-              <button
-                onClick={() => setActiveDrawer(DRAWERS.SYNC_DEVICE)}
-                className='w-full py-4 bg-[#1e3a8a] text-white font-bold rounded-2xl shadow-md hover:bg-blue-800 transition-all flex items-center justify-center gap-2'
-              >
-                <Smartphone size={18} /> Sinkronisasi Perangkat (P2P)
-              </button>
-            </div>
+            <button
+              onClick={() => setActiveDrawer(DRAWERS.SYNC_DEVICE)}
+              className='w-full py-3.5 text-white font-bold rounded-2xl text-sm flex items-center justify-center gap-2 active:scale-95 transition-all'
+              style={{ background: 'linear-gradient(135deg,#1e3a8a,#312e81)', boxShadow: '0 6px 20px rgba(30,58,138,0.35)' }}
+            >
+              <Smartphone size={16} /> Sinkronisasi Perangkat (P2P)
+            </button>
           </div>
 
           <div className='w-full order-2'>
             <BantuanMenuSection
               onOpenBantuan={() => setActiveDrawer(DRAWERS.BANTUAN)}
               onOpenPrivasi={() => setActiveDrawer(DRAWERS.PRIVASI)}
-              onOpenTentang={() => setActiveDrawer(DRAWERS.TENTANG)}
-              onOpenPengembang={() => setActiveDrawer(DRAWERS.PENGEMBANG)}
-              onOpenDonasi={() => setActiveDrawer(DRAWERS.DONASI)}
-              onOpenGithub={() => setActiveDrawer(DRAWERS.GITHUB)}
             />
           </div>
         </div>
 
-        <p className='text-center text-[10px] font-medium text-slate-400 dark:text-slate-600 mt-6 md:mt-10 mb-2'>
+        <p className='text-center text-[10px] font-medium mt-4 mb-2' style={{ color: 'var(--text-muted)' }}>
           MyRamadhan App v1.1.0 &copy; {new Date().getFullYear()}
         </p>
       </main>

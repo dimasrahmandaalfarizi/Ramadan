@@ -17,6 +17,7 @@ import {
 import dayjs from 'dayjs';
 import 'dayjs/locale/id';
 
+import localforage from 'localforage';
 import useUser from '@/hooks/useUser';
 import { StorageService } from '@/lib/storageService';
 import { CITIES } from '@/data/cities';

@@ -149,49 +149,41 @@ function RamatalkContent() {
   };
 
   return (
-    <div className='min-h-screen bg-[#F6F9FC] dark:bg-slate-950 flex flex-col text-slate-800 dark:text-slate-100'>
-      <header className='bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 px-4 py-3 sticky top-0 z-40 flex items-center gap-3'>
-        <button
-          onClick={() => router.push('/')}
-          className='p-2 -ml-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors'
-        >
-          <ArrowLeft size={20} className='text-slate-600 dark:text-slate-300' />
+    <div className='min-h-screen flex flex-col' style={{ background: 'var(--bg-page)' }}>
+      {/* Header */}
+      <header className='sticky top-0 z-40 px-4 py-3 flex items-center gap-2 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-b border-slate-100 dark:border-slate-800'>
+        <button onClick={() => router.push('/')} className='p-1.5 -ml-1.5 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors'>
+          <ArrowLeft size={20} style={{ color: 'var(--text-secondary)' }} />
         </button>
 
-        <div className='w-10 h-10 rounded-full bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-lg'>
-          <Sparkles size={20} />
-        </div>
-
-        <div>
-          <h1 className='font-bold leading-tight'>Ramatalk AI</h1>
-          <div className='flex items-center gap-1.5'>
-            <span className='w-2 h-2 bg-emerald-500 rounded-full animate-pulse'></span>
-            <p className='text-xs text-slate-500 dark:text-slate-400 font-medium'>
-              Online
-            </p>
+        <div className='flex items-center gap-1.5 flex-1'>
+          <span className='w-7 h-7 rounded-lg flex items-center justify-center shrink-0'
+            style={{ background: 'linear-gradient(135deg,#4f46e5,#7c3aed)' }}>
+            <Sparkles size={14} className='text-white' />
+          </span>
+          <div>
+            <h1 className='font-extrabold text-base leading-tight' style={{ color: '#4f46e5' }}>Ramatalk AI</h1>
+            <div className='flex items-center gap-1'>
+              <span className='w-1.5 h-1.5 bg-emerald-500 rounded-full animate-pulse' />
+              <p className='text-[10px] font-medium' style={{ color: 'var(--text-muted)' }}>Online</p>
+            </div>
           </div>
         </div>
       </header>
 
-      <div className='bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-100 dark:border-slate-800 py-2.5 px-4 flex gap-2 overflow-x-auto custom-scrollbar sticky top-[64px] z-30'>
+      {/* Mode chips */}
+      <div className='py-2 px-4 flex gap-2 overflow-x-auto custom-scrollbar sticky top-[60px] z-30 bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg border-b border-slate-100 dark:border-slate-800'>
         {RAMATALK_MODES.map((mode) => (
           <button
             key={mode.id}
             onClick={() => setActiveMode(mode.id)}
-            className={`flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] font-bold whitespace-nowrap transition-all ${
-              activeMode === mode.id
-                ? 'bg-indigo-100 dark:bg-indigo-500/20 text-indigo-700 dark:text-indigo-300 border border-indigo-200 dark:border-indigo-500/30 shadow-sm'
-                : 'bg-slate-50 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-100 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-700'
-            }`}
+            className='flex items-center gap-1.5 px-3 py-1.5 rounded-full text-[11px] font-bold whitespace-nowrap transition-all active:scale-95'
+            style={activeMode === mode.id
+              ? { background: 'linear-gradient(135deg,#4f46e5,#7c3aed)', color: 'white', boxShadow: '0 4px 12px rgba(79,70,229,0.35)' }
+              : { background: 'var(--bg-subtle)', color: 'var(--text-secondary)', border: '1px solid var(--border-light)' }
+            }
           >
-            <mode.icon
-              size={14}
-              className={
-                activeMode === mode.id
-                  ? 'text-indigo-600 dark:text-indigo-300'
-                  : 'text-slate-400 dark:text-slate-500'
-              }
-            />
+            <mode.icon size={13} />
             {mode.label}
           </button>
         ))}
@@ -199,28 +191,25 @@ function RamatalkContent() {
 
       <main className='flex-1 p-4 space-y-4 pb-44 overflow-y-auto'>
         {messages.map((msg) => (
-          <div
-            key={msg.id}
-            className={`flex items-end gap-2 ${
-              msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'
+          <div key={msg.id} className={`flex items-end gap-2 ${msg.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
+            <div className={`w-8 h-8 rounded-2xl flex items-center justify-center shrink-0 ${
+              msg.role === 'user'
+                ? 'text-white'
+                : 'text-indigo-600'
             }`}
-          >
-            <div
-              className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${
-                msg.role === 'user'
-                  ? 'bg-slate-200 dark:bg-slate-700'
-                  : 'bg-indigo-100 dark:bg-indigo-500/20 text-indigo-600 dark:text-indigo-300'
-              }`}
-            >
-              {msg.role === 'user' ? <User size={16} /> : <Bot size={18} />}
+              style={msg.role === 'user'
+                ? { background: 'linear-gradient(135deg,#1e3a8a,#312e81)' }
+                : { background: 'rgba(99,102,241,0.1)', border: '1px solid rgba(99,102,241,0.2)' }
+              }>
+              {msg.role === 'user' ? <User size={15} /> : <Bot size={16} />}
             </div>
 
             <div
-              className={`max-w-[85%] p-4 rounded-2xl text-[14px] leading-relaxed shadow-sm whitespace-pre-wrap ${
-                msg.role === 'user'
-                  ? 'bg-slate-800 dark:bg-slate-700 text-white rounded-tr-none'
-                  : 'bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border border-slate-100 dark:border-slate-800 rounded-tl-none'
-              }`}
+              className='max-w-[85%] p-3.5 rounded-2xl text-[13.5px] leading-relaxed shadow-sm whitespace-pre-wrap'
+              style={msg.role === 'user'
+                ? { background: 'linear-gradient(135deg,#1e3a8a,#312e81)', color: 'white', borderTopRightRadius: '4px' }
+                : { background: 'var(--bg-card)', color: 'var(--text-primary)', border: '1px solid var(--border-card)', borderTopLeftRadius: '4px', boxShadow: 'var(--shadow-card)' }
+              }
             >
               {msg.text}
             </div>
@@ -253,25 +242,24 @@ function RamatalkContent() {
         <div ref={messagesEndRef} />
       </main>
 
-      <div className='fixed bottom-14 left-0 right-0 bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 p-4 pb-6'>
-        <form
-          onSubmit={handleSend}
-          className='max-w-md mx-auto relative flex items-center gap-2'
-        >
+      <div className='fixed bottom-14 left-0 right-0 p-3 pb-4 bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800'>
+        <form onSubmit={handleSend} className='max-w-md mx-auto relative flex items-center gap-2'>
           <input
             type='text'
             value={input}
             onChange={(e) => setInput(e.target.value)}
-            placeholder={`Ketik untuk mode ${
-              RAMATALK_MODES.find((m) => m.id === activeMode)?.label
-            }...`}
-            className='w-full bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-100 border border-transparent rounded-full py-3.5 pl-5 pr-12 focus:bg-white dark:focus:bg-slate-900 focus:border-indigo-300 dark:focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 dark:focus:ring-indigo-500/20 outline-none transition-all text-sm'
+            placeholder={`Mode ${RAMATALK_MODES.find((m) => m.id === activeMode)?.label}...`}
+            className='w-full rounded-2xl py-3 pl-4 pr-12 text-sm outline-none transition-all'
+            style={{ background: 'var(--bg-subtle)', color: 'var(--text-primary)', border: '1.5px solid transparent' }}
+            onFocus={e => e.target.style.border = '1.5px solid #4f46e5'}
+            onBlur={e => e.target.style.border = '1.5px solid transparent'}
             disabled={isLoading}
           />
           <button
             type='submit'
             disabled={isLoading || !input.trim()}
-            className='absolute right-2 p-2.5 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 disabled:opacity-50 disabled:bg-slate-400 transition-colors shadow-md'
+            className='absolute right-2 p-2.5 rounded-xl text-white disabled:opacity-40 transition-all active:scale-90'
+            style={{ background: 'linear-gradient(135deg,#4f46e5,#7c3aed)', boxShadow: '0 4px 12px rgba(79,70,229,0.4)' }}
           >
             <Send size={16} />
           </button>
