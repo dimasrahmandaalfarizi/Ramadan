@@ -193,25 +193,41 @@ export default function TrackerKalender() {
       </div>
 
       <div className='max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto p-5'>
-        {/* Header Adaptif */}
-        <header className='flex items-center gap-3 mb-6 mt-2'>
+        {/* Header Premium */}
+        <header className='flex items-center gap-4 mb-6 mt-2'>
           <button
             type='button'
             onClick={() => router.back()}
-            className='w-10 h-10 rounded-full bg-white dark:bg-slate-900 shadow-sm border border-slate-100 dark:border-slate-800 flex items-center justify-center hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors'
+            className='btn-press w-10 h-10 rounded-2xl flex items-center justify-center shrink-0'
+            style={{
+              background: 'var(--bg-card)',
+              border: '1px solid var(--border-card)',
+              boxShadow: 'var(--shadow-card)',
+            }}
           >
-            <ArrowLeft
-              size={18}
-              className='text-slate-600 dark:text-slate-300'
-            />
+            <ArrowLeft size={18} style={{ color: 'var(--text-secondary)' }} />
           </button>
-          <div>
-            <h1 className='text-xl md:text-2xl font-extrabold text-slate-800 dark:text-slate-100 tracking-tight'>
-              Kalender Ramadhan
-            </h1>
-            <p className='text-xs md:text-sm text-slate-400 dark:text-slate-500'>
-              19 Februari – 21 Maret {CURRENT_YEAR} · 30 Hari
-            </p>
+          <div
+            className='flex-1 flex items-center gap-4 rounded-2xl px-5 py-3'
+            style={{
+              background: 'var(--bg-card)',
+              border: '1px solid var(--border-card)',
+              boxShadow: 'var(--shadow-card)',
+            }}
+          >
+            {/* Accent dot */}
+            <div
+              className='w-2 h-2 rounded-full shrink-0'
+              style={{ background: 'linear-gradient(135deg,#3b5fcc,#1e3a8a)' }}
+            />
+            <div className='flex-1'>
+              <h1 className='font-extrabold tracking-tight text-base' style={{ color: 'var(--text-primary)' }}>
+                Kalender Ramadhan
+              </h1>
+              <p className='text-[11px] mt-0.5' style={{ color: 'var(--text-muted)' }}>
+                19 Feb – 21 Mar {CURRENT_YEAR} · 30 Hari
+              </p>
+            </div>
           </div>
         </header>
 

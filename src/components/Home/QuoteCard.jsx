@@ -1,6 +1,7 @@
 'use client';
 
 import { RefreshCw } from 'lucide-react';
+import ShareButton from '@/components/_shared/ShareButton';
 
 const QuoteCard = ({ quote, isSpinning, onRefresh }) => (
   <div
@@ -57,10 +58,17 @@ const QuoteCard = ({ quote, isSpinning, onRefresh }) => (
       &ldquo;{quote?.text}&rdquo;
     </p>
 
-    {/* Source */}
-    <p className='relative z-10 text-[11px] text-indigo-300/50 font-medium border-t border-white/[0.06] pt-3'>
-      — {quote?.source}
-    </p>
+    {/* Source + Share */}
+    <div className='relative z-10 flex items-center justify-between border-t border-white/[0.06] pt-3 gap-3'>
+      <p className='text-[11px] text-indigo-300/50 font-medium'>
+        — {quote?.source}
+      </p>
+      <ShareButton
+        text={`"${quote?.text}"`}
+        label={`— ${quote?.source}`}
+        className='bg-white/10 text-white/60 hover:text-white hover:bg-white/20'
+      />
+    </div>
   </div>
 );
 

@@ -23,6 +23,7 @@ import ToolGrid from '@/components/Home/ToolGrid';
 import DailyKnowledge from '@/components/Home/DailyKnowledge';
 import JurnalCard from '@/components/Home/JurnalCard';
 import QuoteCard from '@/components/Home/QuoteCard';
+import StreakCard from '@/components/Home/StreakCard';
 
 import TrackerDrawer from '@/components/TrackerDrawer';
 import ScheduleDrawer from '@/components/ScheduleDrawer';
@@ -133,6 +134,9 @@ export default function MyRamadhanHome() {
               taskProgress={taskProgress}
               onClick={() => setIsTrackerOpen(true)}
             />
+
+            {/* Streak */}
+            <StreakCard />
 
             {/* Tool Grid */}
             <div style={{
