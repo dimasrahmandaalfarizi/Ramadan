@@ -4,7 +4,7 @@ import { RefreshCw } from 'lucide-react';
 
 const QuoteCard = ({ quote, isSpinning, onRefresh }) => (
   <div
-    className='relative rounded-[2rem] p-6 overflow-hidden text-white group transition-all duration-500 hover:-translate-y-1 flex flex-col justify-between'
+    className='card-lift-dark relative rounded-[2rem] p-6 overflow-hidden text-white flex flex-col justify-between'
     style={{
       background: 'linear-gradient(135deg, #0c1445 0%, #1a2a6c 45%, #1e1b4b 100%)',
       boxShadow: '0 12px 40px rgba(30,58,138,0.4)',

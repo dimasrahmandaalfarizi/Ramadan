@@ -13,7 +13,7 @@ const DailyGoalTracker = ({ taskProgress, onClick }) => {
   return (
     <div
       onClick={onClick}
-      className='relative rounded-[2rem] p-5 md:p-6 overflow-hidden cursor-pointer group active:scale-[0.98] transition-all duration-300 hover:-translate-y-1'
+      className='card-lift-dark relative rounded-[2rem] p-5 md:p-6 overflow-hidden cursor-pointer'
       style={{
         background: isComplete
           ? 'linear-gradient(135deg, #064e3b 0%, #065f46 50%, #047857 100%)'

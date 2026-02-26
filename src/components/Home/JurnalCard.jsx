@@ -9,7 +9,7 @@ const JurnalCard = ({ user }) => {
   return (
     <div
       onClick={() => router.push(user ? '/jurnal' : '/auth/login')}
-      className='relative rounded-[2rem] p-5 overflow-hidden cursor-pointer group active:scale-[0.98] transition-all duration-300 hover:-translate-y-1 h-full flex flex-col'
+      className='card-lift relative rounded-[2rem] p-5 overflow-hidden cursor-pointer h-full flex flex-col'
       style={{
         background: 'var(--bg-card)',
         border: '1px solid var(--border-card)',

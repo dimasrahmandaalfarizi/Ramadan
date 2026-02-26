@@ -57,7 +57,7 @@ export default function HeroCard({ hero, userCity, onOpenSchedule }) {
 
   return (
     <div
-      className='relative min-h-[288px] md:min-h-[320px] lg:min-h-[340px] rounded-[2.5rem] p-6 md:p-8 lg:p-9 overflow-hidden transition-transform duration-500 hover:-translate-y-1 group'
+      className='card-lift-dark relative min-h-[288px] md:min-h-[320px] lg:min-h-[340px] rounded-[2.5rem] p-6 md:p-8 lg:p-9 overflow-hidden'
       style={{
         background: style.gradient,
         boxShadow: '0 24px 64px rgba(5,10,40,0.55), 0 0 0 1px rgba(255,255,255,0.05)',

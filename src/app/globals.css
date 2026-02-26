@@ -42,8 +42,10 @@
   --gradient-surface: linear-gradient(180deg, #FFFFFF 0%, #F4F7FB 100%);
 
   /* Shadows */
-  --shadow-card:  0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.06);
-  --shadow-float: 0 8px 32px rgba(30, 58, 138, 0.12);
+  --shadow-card:       0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.06);
+  --shadow-float:      0 8px 32px rgba(30, 58, 138, 0.12);
+  --shadow-hover:      0 4px 24px rgba(0,0,0,0.10), 0 1px 4px rgba(0,0,0,0.05);
+  --shadow-hover-dark: 0 10px 40px rgba(0,0,0,0.55), 0 2px 8px rgba(0,0,0,0.3);
   --shadow-glow-primary: 0 0 24px rgba(59, 95, 204, 0.35);
   --shadow-glow-gold:    0 0 20px rgba(245, 158, 11, 0.4);
 
@@ -75,8 +77,10 @@
   --gradient-hero:    linear-gradient(135deg, #0d1b2e 0%, #1a0533 50%, #050C1A 100%);
   --gradient-surface: linear-gradient(180deg, #0D1B2E 0%, #050C1A 100%);
 
-  --shadow-card:  0 1px 3px rgba(0,0,0,0.2), 0 4px 16px rgba(0,0,0,0.3);
-  --shadow-float: 0 8px 32px rgba(0,0,0,0.4);
+  --shadow-card:       0 1px 3px rgba(0,0,0,0.2), 0 4px 16px rgba(0,0,0,0.3);
+  --shadow-float:      0 8px 32px rgba(0,0,0,0.4);
+  --shadow-hover:      0 6px 28px rgba(0,0,0,0.25), 0 2px 6px rgba(0,0,0,0.15);
+  --shadow-hover-dark: 0 12px 48px rgba(0,0,0,0.7), 0 3px 10px rgba(0,0,0,0.4);
 
   --background: var(--bg-page);
   --foreground: var(--text-primary);
@@ -253,13 +257,37 @@ body {
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-card);
   border: 1px solid var(--border-card);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 280ms ease-out, box-shadow 280ms ease-out;
 }
+.card:hover  { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.card:active { transform: translateY(0) scale(0.985); transition-duration: 100ms; }
 
-.card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-float);
+/* ─────────────────────────────────────────
+   LUXURY HOVER UTILITIES
+   ───────────────────────────────────────── */
+
+/* Light card — naik 2px, shadow lebih dalam */
+.card-lift {
+  transition: transform 280ms ease-out, box-shadow 280ms ease-out;
+  will-change: transform;
 }
+.card-lift:hover  { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+.card-lift:active { transform: translateY(0) scale(0.985); transition-duration: 100ms; }
+
+/* Dark gradient card — sama tapi shadow dark-aware */
+.card-lift-dark {
+  transition: transform 280ms ease-out, box-shadow 280ms ease-out;
+  will-change: transform;
+}
+.card-lift-dark:hover  { transform: translateY(-2px); box-shadow: var(--shadow-hover-dark); }
+.card-lift-dark:active { transform: translateY(0) scale(0.985); transition-duration: 100ms; }
+
+/* Small icon button — opacity + subtle press */
+.btn-press {
+  transition: transform 200ms ease-out, opacity 200ms ease-out;
+}
+.btn-press:hover  { opacity: 0.82; }
+.btn-press:active { transform: scale(0.91); transition-duration: 80ms; }
 
 /* ─────────────────────────────────────────
    PREMIUM GRADIENT CARDS

@@ -9,7 +9,7 @@ const DailyKnowledge = ({ hijriDay, dailyTopic }) => {
   return (
     <div
       onClick={() => router.push(`/study/${hijriDay}`)}
-      className='relative rounded-[2rem] p-5 overflow-hidden cursor-pointer group active:scale-[0.98] transition-all duration-300 hover:-translate-y-1 h-full flex flex-col'
+      className='card-lift-dark relative rounded-[2rem] p-5 overflow-hidden cursor-pointer h-full flex flex-col'
       style={{
         background: 'linear-gradient(135deg, #451a03 0%, #78350f 50%, #92400e 100%)',
         boxShadow: '0 10px 36px rgba(120,53,15,0.4)',

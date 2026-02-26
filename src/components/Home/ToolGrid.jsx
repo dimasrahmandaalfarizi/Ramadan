@@ -97,54 +97,27 @@ const ToolGrid = () => {
           >
             {/* ── Card ── */}
             <span
-              className='relative w-full aspect-square rounded-2xl flex flex-col items-center justify-center gap-1 overflow-hidden'
+              className='card-lift-dark relative w-full aspect-square rounded-2xl flex flex-col items-center justify-center gap-1 overflow-hidden ring-1 ring-transparent hover:ring-white/[0.14] transition-[box-shadow,ring-color] duration-[280ms]'
               style={{
                 background: tool.gradient,
                 boxShadow: tool.shadow,
-                transition: 'transform 0.25s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.25s ease',
-              }}
-              onMouseEnter={e => {
-                e.currentTarget.style.transform = 'translateY(-4px) scale(1.06)';
-                e.currentTarget.style.boxShadow = `0 16px 36px ${tool.glow}, 0 0 0 2px rgba(255,255,255,0.15)`;
-              }}
-              onMouseLeave={e => {
-                e.currentTarget.style.transform = 'translateY(0) scale(1)';
-                e.currentTarget.style.boxShadow = tool.shadow;
-              }}
-              onPointerDown={e => {
-                e.currentTarget.style.transform = 'translateY(1px) scale(0.94)';
-                e.currentTarget.style.boxShadow = `0 4px 12px ${tool.glow}`;
-              }}
-              onPointerUp={e => {
-                e.currentTarget.style.transform = 'translateY(-4px) scale(1.06)';
-                e.currentTarget.style.boxShadow = `0 16px 36px ${tool.glow}, 0 0 0 2px rgba(255,255,255,0.15)`;
               }}
             >
-              {/* Shine diagonal overlay */}
+              {/* Shine diagonal — very subtle, luxury */}
               <span
-                className='absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100'
+                className='absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-[280ms]'
                 style={{
-                  background: 'linear-gradient(130deg, rgba(255,255,255,0.22) 0%, transparent 55%)',
-                  transition: 'opacity 0.25s ease',
+                  background: 'linear-gradient(130deg, rgba(255,255,255,0.10) 0%, transparent 50%)',
                 }}
               />
-              {/* Top-right glow blob */}
+              {/* Glow blob top-right */}
               <span
-                className='absolute rounded-full blur-md pointer-events-none opacity-30'
-                style={{ width: '60%', height: '60%', background: 'white', top: '-18%', right: '-12%' }}
-              />
-              {/* Bottom-left shadow blob */}
-              <span
-                className='absolute rounded-full blur-xl pointer-events-none opacity-20'
-                style={{ width: '55%', height: '55%', background: 'black', bottom: '-20%', left: '-15%' }}
+                className='absolute rounded-full blur-md pointer-events-none opacity-25'
+                style={{ width: '55%', height: '55%', background: 'white', top: '-18%', right: '-12%' }}
               />
 
               {/* Icon */}
-              <Icon
-                size={15}
-                strokeWidth={1.8}
-                className='text-white/80 relative z-10 group-hover:scale-110 transition-transform duration-200'
-              />
+              <Icon size={15} strokeWidth={1.8} className='text-white/80 relative z-10' />
 
               {/* Arabic text */}
               <span
@@ -161,7 +134,7 @@ const ToolGrid = () => {
 
             {/* Label */}
             <span
-              className='text-[10px] md:text-[11px] font-semibold text-center leading-tight transition-colors duration-200 group-hover:text-slate-700 dark:group-hover:text-slate-200'
+              className='text-[10px] md:text-[11px] font-semibold text-center leading-tight'
               style={{ color: 'var(--text-muted)' }}
             >
               {tool.title}
