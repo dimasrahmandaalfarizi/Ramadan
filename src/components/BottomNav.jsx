@@ -2,13 +2,12 @@
 
 import React from 'react';
 import { useRouter, usePathname } from 'next/navigation';
-import { Home, BookOpen, CalendarDays, MessageCircle, User } from 'lucide-react';
+import { Home, BookOpen, CalendarDays, User } from 'lucide-react';
 
 const NAV_ITEMS = [
   { path: '/',               icon: Home,          label: 'Beranda',   exact: true  },
   { path: '/quran',          icon: BookOpen,       label: "Al-Qur'an", exact: false },
   { path: '/tracker-kalender', icon: CalendarDays, label: 'Tracker',   exact: false },
-  { path: '/ramatalk',       icon: MessageCircle,  label: 'RamaTalk',  exact: false },
   { path: '/user',           icon: User,           label: 'Profil',    exact: false },
 ];
 

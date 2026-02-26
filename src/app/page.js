@@ -22,7 +22,6 @@ import DailyGoalTracker from '@/components/Home/DailyGoalTracker';
 import ToolGrid from '@/components/Home/ToolGrid';
 import DailyKnowledge from '@/components/Home/DailyKnowledge';
 import JurnalCard from '@/components/Home/JurnalCard';
-import RamaTalkCard from '@/components/Home/RamaTalkCard';
 import QuoteCard from '@/components/Home/QuoteCard';
 
 import TrackerDrawer from '@/components/TrackerDrawer';
@@ -134,7 +133,6 @@ export default function MyRamadhanHome() {
           <div className='w-full lg:w-[350px] xl:w-[380px] flex-shrink-0 grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-col gap-5 md:gap-6 lg:gap-6'>
             <DailyKnowledge hijriDay={hijriDay} dailyTopic={dailyTopic} />
             <JurnalCard user={user} />
-            <RamaTalkCard />
             <QuoteCard
               quote={quoteOfTheDay}
               isSpinning={isSpinning}

@@ -10,7 +10,6 @@ import {
   Heart,
   Compass,
   CalendarDays,
-  MessageCircle,
   User,
   Pen,
   Fingerprint,
@@ -123,13 +122,6 @@ export default function SideNav() {
       },
     ],
     [
-      {
-        path: '/ramatalk',
-        icon: MessageCircle,
-        label: 'RamaTalk AI',
-        activeColor: 'text-[#1e3a8a] dark:text-blue-400',
-        bgHover: 'hover:bg-blue-50 dark:hover:bg-blue-900/30',
-      },
       {
         path: '/user',
         icon: User,
