@@ -1,47 +1,66 @@
 'use client';
 
-import { RefreshCw, Quote } from 'lucide-react';
+import { RefreshCw } from 'lucide-react';
 
 const QuoteCard = ({ quote, isSpinning, onRefresh }) => (
   <div
-    className='relative rounded-[2rem] p-6 md:p-7 overflow-hidden text-white group transition-all duration-500 hover:-translate-y-1 h-full flex flex-col justify-center'
+    className='relative rounded-[2rem] p-6 overflow-hidden text-white group transition-all duration-500 hover:-translate-y-1 flex flex-col justify-between'
     style={{
-      background: 'linear-gradient(135deg, #0c1445 0%, #1e3a8a 50%, #1e1b4b 100%)',
+      background: 'linear-gradient(135deg, #0c1445 0%, #1a2a6c 45%, #1e1b4b 100%)',
       boxShadow: '0 12px 40px rgba(30,58,138,0.4)',
+      border: '1px solid rgba(99,102,241,0.12)',
     }}
   >
-    {/* Ambient */}
+    {/* Ambient glow */}
     <div className='absolute inset-0 pointer-events-none'
-      style={{ background: 'radial-gradient(ellipse at 50% 30%, rgba(99,102,241,0.25) 0%, transparent 65%)' }} />
+      style={{ background: 'radial-gradient(ellipse at 50% 20%, rgba(99,102,241,0.2) 0%, transparent 65%)' }} />
 
-    {/* Large decorative quote mark */}
-    <Quote
-      size={80}
-      className='absolute -bottom-3 -right-3 pointer-events-none'
-      style={{ color: 'rgba(255,255,255,0.04)' }}
-    />
+    {/* Islamic calligraphy deco (bismillah-style dots) */}
+    {[
+      { top: '12%', left: '85%' }, { top: '25%', left: '92%' },
+      { top: '75%', left: '8%' },  { top: '88%', left: '15%' },
+    ].map((s, i) => (
+      <span key={i} className='absolute w-1 h-1 rounded-full bg-indigo-400/30 pointer-events-none'
+        style={{ top: s.top, left: s.left }} />
+    ))}
 
-    <div className='relative z-10'>
-      <div className='flex justify-between items-center mb-4'>
-        <p className='text-[10px] uppercase tracking-[0.3em] text-blue-200/70 font-bold'>
-          Quote of the Day
-        </p>
-        <button
-          onClick={(e) => { e.stopPropagation(); onRefresh(); }}
-          className={`p-2 rounded-full bg-white/10 hover:bg-white/20 transition-all text-blue-200 hover:text-white ${isSpinning ? 'animate-spin' : ''}`}
-        >
-          <RefreshCw size={14} />
-        </button>
-      </div>
+    {/* Large decorative Arabic opening quote */}
+    <span
+      className='absolute bottom-2 right-4 pointer-events-none select-none'
+      style={{
+        fontFamily: '"Amiri", serif',
+        fontSize: '6rem',
+        lineHeight: 1,
+        color: 'rgba(99,102,241,0.08)',
+        fontWeight: 700,
+      }}
+    >
+      ❝
+    </span>
 
-      <p className='text-[15px] md:text-base leading-relaxed font-medium text-white/90 min-h-[4rem]'>
-        &ldquo;{quote.text}&rdquo;
+    {/* Header */}
+    <div className='relative z-10 flex justify-between items-center mb-4'>
+      <p className='text-[10px] uppercase tracking-[0.3em] text-indigo-300/60 font-bold'>
+        Quote of the Day
       </p>
-
-      <p className='mt-4 text-[11px] text-blue-200/50 font-medium'>
-        {quote.source}
-      </p>
+      <button
+        onClick={(e) => { e.stopPropagation(); onRefresh(); }}
+        className={`p-2 rounded-xl text-indigo-300/60 hover:text-white transition-all hover:bg-white/10 ${isSpinning ? 'animate-spin' : 'hover:rotate-180 transition-transform duration-500'}`}
+        aria-label='Refresh quote'
+      >
+        <RefreshCw size={13} />
+      </button>
     </div>
+
+    {/* Quote text */}
+    <p className='relative z-10 text-[14px] md:text-[15px] leading-relaxed font-medium text-white/85 flex-1 mb-4'>
+      &ldquo;{quote?.text}&rdquo;
+    </p>
+
+    {/* Source */}
+    <p className='relative z-10 text-[11px] text-indigo-300/50 font-medium border-t border-white/[0.06] pt-3'>
+      — {quote?.source}
+    </p>
   </div>
 );
 

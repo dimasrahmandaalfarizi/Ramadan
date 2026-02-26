@@ -210,9 +210,7 @@ export default function UserProfile() {
           </div>
         </div>
 
-        <p className='text-center text-[10px] font-medium mt-4 mb-2' style={{ color: 'var(--text-muted)' }}>
-          MyRamadhan App v1.1.0 &copy; {new Date().getFullYear()}
-        </p>
+
       </main>
 
       <DrawerConfirmReset

@@ -103,10 +103,12 @@ export default function MyRamadhanHome() {
   if (!mounted) return null;
 
   return (
-    <main className='min-h-screen pb-20 transition-colors duration-300' style={{ background: 'var(--bg-page)' }}>
+    <main className='min-h-screen pb-24 transition-colors duration-300' style={{ background: 'var(--bg-page)' }}>
 
-      {/* SECTION: MAIN CONTENT CONTAINER */}
-      <div className='w-full max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto p-5 md:py-8 lg:py-10 lg:px-8'>
+      {/* ── MAIN CONTAINER ── */}
+      <div className='w-full max-w-md md:max-w-3xl lg:max-w-5xl xl:max-w-6xl mx-auto px-4 pt-5 pb-4 md:px-6 md:pt-8 lg:px-8 lg:pt-10'>
+
+        {/* Header */}
         <HomeHeader
           user={user}
           hijriDate={hijriDate}
@@ -114,25 +116,47 @@ export default function MyRamadhanHome() {
           onOpenNotification={handleOpenNotification}
         />
 
-        <div className='flex flex-col lg:flex-row gap-5 md:gap-6 lg:gap-8 animate-fadeUp'>
-          {/* SECTION: LEFT COLUMN (HERO & TOOLS) */}
-          <div className='flex-1 flex flex-col gap-5 md:gap-6 lg:gap-6'>
+        {/* ── BENTO GRID ── */}
+        <div className='flex flex-col lg:flex-row gap-4 md:gap-5 lg:gap-6 animate-fadeUp'>
+
+          {/* ── LEFT COLUMN ── */}
+          <div className='flex-1 flex flex-col gap-4 md:gap-5 min-w-0'>
+            {/* Hero */}
             <HeroCard
               hero={hero}
               userCity={userCity}
               onOpenSchedule={() => setIsScheduleOpen(true)}
             />
+
+            {/* Daily Goal Tracker */}
             <DailyGoalTracker
               taskProgress={taskProgress}
               onClick={() => setIsTrackerOpen(true)}
             />
-            <ToolGrid />
+
+            {/* Tool Grid */}
+            <div style={{
+              background: 'var(--bg-card)',
+              border: '1px solid var(--border-card)',
+              boxShadow: 'var(--shadow-card)',
+            }} className='rounded-[2rem] p-4 md:p-5'>
+              <p className='text-[10px] uppercase tracking-widest font-bold mb-4'
+                style={{ color: 'var(--text-muted)' }}>
+                Fitur Islami
+              </p>
+              <ToolGrid />
+            </div>
           </div>
 
-          {/* SECTION: RIGHT COLUMN (CARDS) */}
-          <div className='w-full lg:w-[350px] xl:w-[380px] flex-shrink-0 grid grid-cols-1 md:grid-cols-2 lg:flex lg:flex-col gap-5 md:gap-6 lg:gap-6'>
-            <DailyKnowledge hijriDay={hijriDay} dailyTopic={dailyTopic} />
-            <JurnalCard user={user} />
+          {/* ── RIGHT COLUMN ── */}
+          <div className='w-full lg:w-[340px] xl:w-[370px] shrink-0 flex flex-col gap-4 md:gap-5'>
+            {/* Daily Knowledge + Jurnal — 2 kolom di tablet */}
+            <div className='grid grid-cols-2 md:grid-cols-2 lg:grid-cols-1 gap-4 md:gap-5'>
+              <DailyKnowledge hijriDay={hijriDay} dailyTopic={dailyTopic} />
+              <JurnalCard user={user} />
+            </div>
+
+            {/* Quote — full width di right col */}
             <QuoteCard
               quote={quoteOfTheDay}
               isSpinning={isSpinning}
