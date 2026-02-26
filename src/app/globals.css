@@ -56,6 +56,26 @@
   --radius-xl:   2rem;
   --radius-full: 999px;
 
+  /* ── Tool button gradients (Light mode — jewel tone medium) ── */
+  --tool-quran:   linear-gradient(145deg, #0d2b6e 0%, #1e4db7 100%);
+  --tool-doa:     linear-gradient(145deg, #5c0f1e 0%, #9b1537 100%);
+  --tool-hadits:  linear-gradient(145deg, #064030 0%, #0d6b4e 100%);
+  --tool-fiqih:   linear-gradient(145deg, #6b3000 0%, #b35a00 100%);
+  --tool-kiblat:  linear-gradient(145deg, #1a1560 0%, #3d3ab8 100%);
+  --tool-tasbih:  linear-gradient(145deg, #063d38 0%, #0d6b62 100%);
+  --tool-zakat:   linear-gradient(145deg, #5c3800 0%, #9b6400 100%);
+  --tool-haid:    linear-gradient(145deg, #5c0f3a 0%, #9b186b 100%);
+
+  /* ── Tool button shadows (muted per tool) ── */
+  --tool-shadow-quran:  0 6px 20px rgba(30,77,183,0.35);
+  --tool-shadow-doa:    0 6px 20px rgba(155,21,55,0.35);
+  --tool-shadow-hadits: 0 6px 20px rgba(13,107,78,0.35);
+  --tool-shadow-fiqih:  0 6px 20px rgba(179,90,0,0.35);
+  --tool-shadow-kiblat: 0 6px 20px rgba(61,58,184,0.35);
+  --tool-shadow-tasbih: 0 6px 20px rgba(13,107,98,0.35);
+  --tool-shadow-zakat:  0 6px 20px rgba(155,100,0,0.35);
+  --tool-shadow-haid:   0 6px 20px rgba(155,24,107,0.35);
+
   /* Legacy compatibility */
   --background: var(--bg-page);
   --foreground: var(--text-primary);
@@ -81,6 +101,26 @@
   --shadow-float:      0 8px 32px rgba(0,0,0,0.4);
   --shadow-hover:      0 6px 28px rgba(0,0,0,0.25), 0 2px 6px rgba(0,0,0,0.15);
   --shadow-hover-dark: 0 12px 48px rgba(0,0,0,0.7), 0 3px 10px rgba(0,0,0,0.4);
+
+  /* ── Tool button gradients (Dark mode — near-black with hue hint) ── */
+  --tool-quran:   linear-gradient(145deg, #040e28 0%, #0a1e50 100%);
+  --tool-doa:     linear-gradient(145deg, #1a0408 0%, #400a1a 100%);
+  --tool-hadits:  linear-gradient(145deg, #021510 0%, #073d2a 100%);
+  --tool-fiqih:   linear-gradient(145deg, #1e0e00 0%, #4a2200 100%);
+  --tool-kiblat:  linear-gradient(145deg, #070520 0%, #161250 100%);
+  --tool-tasbih:  linear-gradient(145deg, #021210 0%, #063530 100%);
+  --tool-zakat:   linear-gradient(145deg, #1a1000 0%, #3d2400 100%);
+  --tool-haid:    linear-gradient(145deg, #1a0410 0%, #3f0b28 100%);
+
+  /* ── Tool shadows (darker in dark mode) ── */
+  --tool-shadow-quran:  0 6px 20px rgba(10,30,80,0.5);
+  --tool-shadow-doa:    0 6px 20px rgba(64,10,26,0.5);
+  --tool-shadow-hadits: 0 6px 20px rgba(7,61,42,0.5);
+  --tool-shadow-fiqih:  0 6px 20px rgba(74,34,0,0.5);
+  --tool-shadow-kiblat: 0 6px 20px rgba(22,18,80,0.5);
+  --tool-shadow-tasbih: 0 6px 20px rgba(6,53,48,0.5);
+  --tool-shadow-zakat:  0 6px 20px rgba(61,36,0,0.5);
+  --tool-shadow-haid:   0 6px 20px rgba(63,11,40,0.5);
 
   --background: var(--bg-page);
   --foreground: var(--text-primary);
