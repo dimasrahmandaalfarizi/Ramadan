@@ -7,6 +7,24 @@ import {
 
 const TOTAL_AYAT_QURAN = 6236;
 
+// Hitung sisa hari Ramadhan dari kalender Hijriah (null = bukan Ramadhan)
+const getRamadhanDaysLeft = () => {
+  try {
+    const formatter = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', {
+      day: 'numeric',
+      month: 'numeric',
+      timeZone: 'Asia/Jakarta',
+    });
+    const parts = formatter.formatToParts(new Date());
+    const hijriDay = parseInt(parts.find(p => p.type === 'day')?.value || '0', 10);
+    const hijriMonth = parseInt(parts.find(p => p.type === 'month')?.value || '0', 10);
+    if (hijriMonth === 9) return Math.max(1, 30 - hijriDay + 1);
+    return null;
+  } catch {
+    return null;
+  }
+};
+
 // Function untuk mengelola logika, kalkulasi, dan rekomendasi program khatam
 export const useKhatamPlan = () => {
   const [khatamPlan, setKhatamPlan] = useState(null);
@@ -25,7 +43,13 @@ export const useKhatamPlan = () => {
     const today = new Date();
     const daysElapsed = Math.floor((today - startDate) / (1000 * 60 * 60 * 24));
 
-    const daysRemaining = Math.max(1, plan.targetDays - daysElapsed);
+    // Hitung sisa hari: gunakan sisa Ramadhan jika sedang Ramadhan, otherwise dari targetDays
+    const ramadhanLeft = getRamadhanDaysLeft();
+    const daysFromTarget = Math.max(1, plan.targetDays - daysElapsed);
+    const daysRemaining = ramadhanLeft !== null
+      ? ramadhanLeft  // selalu sync dengan sisa Ramadhan
+      : daysFromTarget;
+
     const ayatRemaining = Math.max(0, TOTAL_AYAT_QURAN - plan.progressAyat);
 
     const targetAyatPerDay = Math.ceil(ayatRemaining / daysRemaining);
@@ -54,6 +78,7 @@ export const useKhatamPlan = () => {
       status,
       recommendation,
       percentage: ((plan.progressAyat / TOTAL_AYAT_QURAN) * 100).toFixed(1),
+      isRamadhan: ramadhanLeft !== null,
     });
   };
 

@@ -11,10 +11,33 @@ import {
 import { useKhatamPlan } from '@/hooks/useKhatamPlan';
 import ConfirmResetDrawer from '@/components/Quran/Drawer/ConfirmResetDrawer';
 
+// Hitung sisa hari Ramadhan berdasarkan kalender Hijriah
+function getRamadhanDaysLeft() {
+  try {
+    const formatter = new Intl.DateTimeFormat('en-u-ca-islamic-umalqura', {
+      day: 'numeric',
+      month: 'numeric',
+      year: 'numeric',
+      timeZone: 'Asia/Jakarta',
+    });
+    const parts = formatter.formatToParts(new Date());
+    const hijriDay = parseInt(parts.find(p => p.type === 'day')?.value || '0', 10);
+    const hijriMonth = parseInt(parts.find(p => p.type === 'month')?.value || '0', 10);
+    // Ramadhan = bulan ke-9 Hijriah, 30 hari
+    if (hijriMonth === 9) {
+      return Math.max(1, 30 - hijriDay + 1);
+    }
+    return null; // Bukan bulan Ramadhan
+  } catch {
+    return null;
+  }
+}
+
 export default function KhatamPlanCard({ onResetLastRead }) {
+  const ramadhanDaysLeft = getRamadhanDaysLeft();
   const { khatamPlan, stats, createPlan, removePlan } = useKhatamPlan();
   const [isSetupOpen, setIsSetupOpen] = useState(false);
-  const [targetDays, setTargetDays] = useState(30);
+  const [targetDays, setTargetDays] = useState(ramadhanDaysLeft ?? 30);
   const [showCongrats, setShowCongrats] = useState(false);
 
   const [isConfirmOpen, setIsConfirmOpen] = useState(false);
@@ -72,24 +95,31 @@ export default function KhatamPlanCard({ onResetLastRead }) {
             Mulai Program
           </button>
         ) : (
-          <div className='relative z-10 mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-wrap items-center gap-3'>
-            <input
-              type='number'
-              min='1'
-              max='365'
-              value={targetDays}
-              onChange={(e) => setTargetDays(Number(e.target.value))}
-              className='w-20 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-sm outline-none focus:border-[#2563eb]'
-            />
-            <span className='text-sm font-medium text-slate-600 dark:text-slate-400'>
-              Hari
-            </span>
-            <button
-              onClick={handleStartPlan}
-              className='ml-auto px-4 py-2 bg-[#2563eb] dark:bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors'
-            >
-              Simpan Target
-            </button>
+          <div className='relative z-10 mt-auto pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-3'>
+            {ramadhanDaysLeft !== null && (
+              <p className='text-xs text-emerald-600 dark:text-emerald-400 font-medium flex items-center gap-1.5'>
+                <span>🌙</span> Sisa <strong>{ramadhanDaysLeft} hari</strong> Ramadhan — target disesuaikan otomatis
+              </p>
+            )}
+            <div className='flex flex-wrap items-center gap-3'>
+              <input
+                type='number'
+                min='1'
+                max='365'
+                value={targetDays}
+                onChange={(e) => setTargetDays(Number(e.target.value))}
+                className='w-20 px-3 py-2 rounded-lg border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800 text-slate-800 dark:text-slate-100 text-sm outline-none focus:border-[#2563eb]'
+              />
+              <span className='text-sm font-medium text-slate-600 dark:text-slate-400'>
+                Hari
+              </span>
+              <button
+                onClick={handleStartPlan}
+                className='ml-auto px-4 py-2 bg-[#2563eb] dark:bg-blue-600 text-white text-sm font-bold rounded-lg hover:bg-blue-700 transition-colors'
+              >
+                Simpan Target
+              </button>
+            </div>
           </div>
         )}
       </div>
