@@ -57,9 +57,15 @@ export const useKhatamPlan = () => {
     });
   };
 
-  // Function untuk membuat rencana khatam baru
+  // Function untuk membuat rencana khatam baru (atau update targetDays jika sudah ada)
   const createPlan = (targetDays) => {
-    const newPlan = { targetDays, progressAyat: 0 };
+    const existing = getKhatamPlan();
+    const newPlan = {
+      targetDays,
+      progressAyat: existing?.progressAyat ?? 0,
+      // Pertahankan startDate jika plan sudah ada, buat baru jika belum
+      startDate: existing?.startDate || new Date().toISOString(),
+    };
     saveKhatamPlan(newPlan);
   };
 

@@ -44,24 +44,30 @@ export const getKhatamPlan = () => {
 
 export const saveKhatamPlan = (planData) => {
   if (!isBrowser) return;
+  // Pertahankan startDate yang sudah ada jika tidak dikirim ulang
+  const existing = getKhatamPlan();
   localStorage.setItem(
     'quran_khatam_plan',
     JSON.stringify({
+      progressAyat: 0,
       ...planData,
-      startDate: new Date().toISOString(),
-      progressAyat: planData.progressAyat || 0,
+      // Gunakan startDate lama jika ada & planData tidak punya startDate baru
+      startDate: planData.startDate || (existing?.startDate) || new Date().toISOString(),
     }),
   );
   window.dispatchEvent(new Event('khatam_plan_updated'));
 };
 
-// Function untuk MENIMPA progress ayat (Kalkulasi Absolut)
+// Function untuk MENIMPA progress ayat (Kalkulasi Absolut) — startDate tetap terjaga
 export const setKhatamProgress = (absoluteAyahCount) => {
   if (!isBrowser) return;
   const plan = getKhatamPlan();
   if (plan) {
-    plan.progressAyat = Math.min(6236, Math.max(0, absoluteAyahCount));
-    localStorage.setItem('quran_khatam_plan', JSON.stringify(plan));
+    const updated = {
+      ...plan,
+      progressAyat: Math.min(6236, Math.max(0, absoluteAyahCount)),
+    };
+    localStorage.setItem('quran_khatam_plan', JSON.stringify(updated));
     window.dispatchEvent(new Event('khatam_plan_updated'));
   }
 };
