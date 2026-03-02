@@ -1,7 +1,6 @@
 'use client';
 
-import Image from 'next/image';
-import { Coffee, MapPin } from 'lucide-react';
+import { Coffee, MapPin, QrCode } from 'lucide-react';
 import DrawerPanel from '@/components/_shared/DrawerPanel';
 
 /**
@@ -42,22 +41,9 @@ const DrawerDonasi = ({ open, onClose }) => (
       <p className='text-xs font-bold text-center text-slate-500 dark:text-slate-400 uppercase tracking-widest mb-3'>
         Scan QRIS di Bawah Ini
       </p>
-      <div className='aspect-square w-full bg-white dark:bg-slate-800 rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-600 flex items-center justify-center relative overflow-hidden'>
-        <Image
-          src='/qris-donasi.jpeg'
-          alt='QRIS Donasi'
-          fill
-          className='object-contain p-4'
-        />
-        <div className='text-center'>
-          <MapPin
-            size={24}
-            className='text-slate-300 dark:text-slate-600 mx-auto mb-2'
-          />
-          <p className='text-slate-400 dark:text-slate-500 text-xs font-medium'>
-            Tempat Gambar QRIS
-          </p>
-        </div>
+      <div className='aspect-square w-full bg-white dark:bg-slate-800 rounded-2xl border-2 border-dashed border-slate-300 dark:border-slate-600 flex flex-col items-center justify-center gap-3'>
+        <QrCode size={48} className='text-slate-300 dark:text-slate-600' />
+        <p className='text-slate-400 dark:text-slate-500 text-xs font-medium text-center'>QRIS belum tersedia</p>
       </div>
     </div>
   </DrawerPanel>

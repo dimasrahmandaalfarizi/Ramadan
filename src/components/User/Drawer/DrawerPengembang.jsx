@@ -1,6 +1,5 @@
 'use client';
 
-import Image from 'next/image';
 import {
   Github,
   Linkedin,
@@ -23,13 +22,8 @@ const DrawerPengembang = ({ open, onClose }) => (
   >
     {/* Identitas pengembang */}
     <div className='flex items-center gap-4 mb-5 mt-2'>
-      <div className='w-16 h-16 bg-gradient-to-tr from-blue-100 to-indigo-100 rounded-full flex items-center justify-center text-[#1e3a8a] shadow-inner shrink-0 relative overflow-hidden'>
-        <Image
-          src='/developer-profile.jpg'
-          alt='Profile'
-          fill
-          className='object-cover'
-        />
+      <div className='w-16 h-16 bg-gradient-to-tr from-blue-100 to-indigo-100 rounded-full flex items-center justify-center text-[#1e3a8a] shadow-inner shrink-0'>
+        <UserIcon size={32} />
       </div>
       <div>
         <h3 className='font-bold text-base text-slate-800 dark:text-slate-100'>
