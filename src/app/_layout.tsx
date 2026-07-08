@@ -10,6 +10,7 @@ import {
 } from '@expo-google-fonts/plus-jakarta-sans';
 import { useAppTheme } from '../hooks/useAppTheme';
 import { View, StyleSheet } from 'react-native';
+import { SettingsProvider } from '../context/SettingsContext';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -34,16 +35,18 @@ export default function RootLayout() {
   }
 
   return (
-    <View style={[styles.container, { backgroundColor: colors.background }]}>
-      <Stack
-        screenOptions={{
-          headerShown: false,
-          contentStyle: { backgroundColor: colors.background },
-        }}
-      >
-        <Stack.Screen name="(tabs)" />
-      </Stack>
-    </View>
+    <SettingsProvider>
+      <View style={[styles.container, { backgroundColor: colors.background }]}>
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            contentStyle: { backgroundColor: colors.background },
+          }}
+        >
+          <Stack.Screen name="(tabs)" />
+        </Stack>
+      </View>
+    </SettingsProvider>
   );
 }
 

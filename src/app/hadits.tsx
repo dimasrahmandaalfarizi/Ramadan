@@ -1,35 +1,66 @@
 import React from 'react';
-import { View, StyleSheet, SafeAreaView } from 'react-native';
-import { Stack, useRouter } from 'expo-router';
+import { View, StyleSheet, FlatList, SafeAreaView } from 'react-native';
+import { Stack } from 'expo-router';
 import { useAppTheme } from '../hooks/useAppTheme';
+import { useSettings } from '../context/SettingsContext';
 import { Typography } from '../components/ui/Typography';
-import { Ionicons } from '@expo/vector-icons';
 import { Spacing } from '../constants/theme';
 import { Card } from '../components/ui/Card';
 
-export default function HaditsPlaceholderScreen() {
+import haditsData from '../data/hadits.json';
+
+const HADITS_LIST = haditsData;
+
+export default function HaditsScreen() {
   const { colors } = useAppTheme();
-  const router = useRouter();
+  const settings = useSettings();
+
+  const renderItem = ({ item }: { item: typeof HADITS_LIST[0] }) => (
+    <Card style={styles.card} padding="lg">
+      <View style={styles.header}>
+        <View style={[styles.badge, { backgroundColor: colors.primaryLight }]}>
+          <Typography variant="caption" weight="bold" color="primary">
+            {item.perawi}
+          </Typography>
+        </View>
+        <Typography variant="h3" weight="bold" style={{ marginTop: Spacing.sm }}>
+          {item.title}
+        </Typography>
+      </View>
+      
+      <Typography 
+        variant="h2" 
+        align="right" 
+        style={[styles.arabicText, { color: colors.text, fontSize: settings.getArabicFontSizeValue() - 16, lineHeight: settings.getArabicFontSizeValue() }]}
+      >
+        {item.arab}
+      </Typography>
+      
+      <Typography variant="body" color="secondary" style={styles.artiText}>
+        "{item.arti}"
+      </Typography>
+    </Card>
+  );
 
   return (
     <SafeAreaView style={[styles.container, { backgroundColor: colors.background }]}>
       <Stack.Screen 
         options={{
           headerShown: true,
-          title: 'Hadits',
+          title: 'Hadits Pilihan',
           headerStyle: { backgroundColor: colors.background },
           headerTintColor: colors.text,
           headerShadowVisible: false,
         }} 
       />
       
-      <View style={styles.center}>
-        <Ionicons name="library-outline" size={64} color={colors.primary} style={{ marginBottom: Spacing.lg }} />
-        <Typography variant="h2" weight="bold" align="center">Segera Hadir</Typography>
-        <Typography variant="body" color="secondary" align="center" style={{ marginTop: Spacing.sm, paddingHorizontal: Spacing.xl }}>
-          Kumpulan Hadits pilihan sedang dipersiapkan.
-        </Typography>
-      </View>
+      <FlatList
+        data={HADITS_LIST}
+        keyExtractor={(item) => item.id}
+        renderItem={renderItem}
+        contentContainerStyle={styles.listContent}
+        showsVerticalScrollIndicator={false}
+      />
     </SafeAreaView>
   );
 }
@@ -38,9 +69,32 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  center: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+  listContent: {
+    padding: Spacing.lg,
   },
+  card: {
+    marginBottom: Spacing.md,
+  },
+  header: {
+    marginBottom: Spacing.md,
+    paddingBottom: Spacing.sm,
+    borderBottomWidth: 1,
+    borderBottomColor: 'rgba(0,0,0,0.05)',
+  },
+  badge: {
+    alignSelf: 'flex-start',
+    paddingHorizontal: Spacing.sm,
+    paddingVertical: 4,
+    borderRadius: 8,
+  },
+  arabicText: {
+    fontFamily: 'sans-serif',
+    lineHeight: 50,
+    marginBottom: Spacing.md,
+    writingDirection: 'rtl',
+  },
+  artiText: {
+    lineHeight: 22,
+    fontStyle: 'italic',
+  }
 });

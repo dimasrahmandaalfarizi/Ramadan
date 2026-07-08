@@ -6,7 +6,11 @@ import { Spacing } from '../../constants/theme';
 import { Ionicons } from '@expo/vector-icons';
 
 const { width } = Dimensions.get('window');
-const CARD_WIDTH = width > 800 ? 300 : width * 0.7;
+// Card width fills the container but container has a maxWidth.
+const CONTAINER_MAX_WIDTH = 500;
+const actualContainerWidth = Math.min(width, CONTAINER_MAX_WIDTH);
+// actual container width - 48 (padding) - 16 (margin right)
+const CARD_WIDTH = actualContainerWidth - 64;
 
 export function HorizontalBanner() {
   const { colors } = useAppTheme();
@@ -48,6 +52,9 @@ export function HorizontalBanner() {
         horizontal 
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.scrollContent}
+        snapToInterval={CARD_WIDTH + Spacing.md}
+        snapToAlignment="start"
+        decelerationRate="fast"
       >
         {banners.map((item) => (
           <TouchableOpacity 
@@ -74,6 +81,9 @@ export function HorizontalBanner() {
 const styles = StyleSheet.create({
   container: {
     marginBottom: Spacing.xl,
+    maxWidth: CONTAINER_MAX_WIDTH,
+    alignSelf: 'center',
+    width: '100%',
   },
   sectionTitle: {
     marginBottom: Spacing.md,
