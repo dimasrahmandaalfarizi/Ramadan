@@ -5,6 +5,9 @@ import { Spacing, Colors } from '../constants/theme';
 import { Typography } from '../components/ui/Typography';
 import { Card } from '../components/ui/Card';
 import { ThemeToggle } from '../components/ui/ThemeToggle';
+import { DailyInspiration } from '../components/ui/DailyInspiration';
+import { RamadanProgress } from '../components/ui/RamadanProgress';
+import { HorizontalBanner } from '../components/ui/HorizontalBanner';
 import { getSchedule } from '../services/schedule';
 import { Ionicons } from '@expo/vector-icons';
 import dayjs from 'dayjs';
@@ -113,6 +116,8 @@ export default function DashboardScreen() {
           <Typography color="secondary" align="center">{error}</Typography>
         ) : schedule ? (
           <>
+            <RamadanProgress />
+
             {/* Hero Section */}
             <Card style={styles.heroCard} padding="lg">
               <View style={styles.heroTop}>
@@ -149,6 +154,8 @@ export default function DashboardScreen() {
               <QuickAction icon="library" title="Hadits" color="#8B5CF6" />
             </View>
 
+            <DailyInspiration />
+
             {/* Prayer Times Grid */}
             <Typography variant="h3" weight="semiBold" style={styles.sectionTitle}>
               Jadwal Sholat
@@ -183,6 +190,8 @@ export default function DashboardScreen() {
                 );
               })}
             </View>
+
+            <HorizontalBanner />
           </>
         ) : (
           <Typography color="secondary" align="center">Tidak ada jadwal</Typography>
