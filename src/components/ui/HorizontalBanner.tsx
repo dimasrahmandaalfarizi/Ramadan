@@ -6,7 +6,8 @@ import { Spacing } from '../../constants/theme';
 import { Ionicons } from '@expo/vector-icons';
 
 const { width } = Dimensions.get('window');
-const CARD_WIDTH = width > 800 ? 300 : width * 0.7;
+// width - 48 (container padding) - 16 (card marginRight)
+const CARD_WIDTH = width > 800 ? (800 - 48 - 16) : (width - 64);
 
 export function HorizontalBanner() {
   const { colors } = useAppTheme();
@@ -48,6 +49,9 @@ export function HorizontalBanner() {
         horizontal 
         showsHorizontalScrollIndicator={false}
         contentContainerStyle={styles.scrollContent}
+        snapToInterval={CARD_WIDTH + Spacing.md}
+        snapToAlignment="start"
+        decelerationRate="fast"
       >
         {banners.map((item) => (
           <TouchableOpacity 
