@@ -1,56 +1,75 @@
-# Welcome to your Expo app 👋
+<p align="center">
+  <img src="./assets/images/icon.png" width="120" alt="Qalbu Logo">
+</p>
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+<h1 align="center">Qalbu</h1>
 
-## Get started
+<p align="center">
+  A comprehensive Islamic application built with React Native (Expo). Provides highly accurate dynamic prayer times, offline-first Qibla compass, Digital Al-Quran, daily prayers, and an exclusive menstruation tracker (Jurnal Haid) for women.
+</p>
 
-1. Install dependencies
+<p align="center">
+  <img src="https://img.shields.io/badge/React_Native-20232A?style=flat&logo=react&logoColor=61DAFB" alt="React Native" />
+  <img src="https://img.shields.io/badge/Expo-1B1F23?style=flat&logo=expo&logoColor=white" alt="Expo" />
+  <img src="https://img.shields.io/badge/TypeScript-007ACC?style=flat&logo=typescript&logoColor=white" alt="TypeScript" />
+</p>
 
-   ```bash
-   npm install
-   ```
+---
 
-2. Start the app
+## Preview
 
-   ```bash
-   npx expo start
-   ```
+Below are the screenshots showcasing the application's clean, modern, and accessible user interface.
 
-In the output, you'll find options to open the app in a
+### Home & Dashboard
+The main dashboard provides dynamic prayer schedules based on the user's location, a progress tracker for Ramadan, and quick action menus for primary features.
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+<p align="center">
+  <img src="./assets/screenshots/home.png" width="300" alt="Home Dashboard">
+</p>
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### Digital Al-Quran
+A beautifully formatted Quran reader fetching real-time data from equran.id API, featuring customizable Arabic font sizes for better readability.
 
-## Get a fresh project
+<p align="center">
+  <img src="./assets/screenshots/quran.png" width="300" alt="Digital Al-Quran">
+</p>
 
-When you're ready, run:
+### Daily Prayers & Selected Hadith
+An offline-first collection of essential daily prayers and selected Hadith, loading instantly via local JSON data.
 
-```bash
-npm run reset-project
-```
+<p align="center">
+  <img src="./assets/screenshots/doa.png" width="300" alt="Daily Prayers">
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="./assets/screenshots/hadits.png" width="300" alt="Selected Hadith">
+</p>
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### Menstruation Tracker (Jurnal Haid)
+An inclusive feature designed to help women track missed fasting days (Qadha) and discover alternative acts of worship during their cycle.
 
-### Other setup steps
+<p align="center">
+  <img src="./assets/screenshots/haid.png" width="300" alt="Menstruation Tracker">
+</p>
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+### Advanced Settings
+A highly customizable user experience allowing users to toggle Dark Mode, adjust Arabic font sizes, and modify prayer calculation parameters.
 
-## Learn more
+<p align="center">
+  <img src="./assets/screenshots/settings.png" width="300" alt="Advanced Settings">
+</p>
 
-To learn more about developing your project with Expo, look at the following resources:
+---
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Technical Overview
 
-## Join the community
+- **Framework:** Expo (React Native)
+- **Language:** TypeScript
+- **State Management:** React Context API & AsyncStorage
+- **APIs:** equran.id (Quran Data), custom prayer times API
+- **Device Sensors:** expo-sensors (Magnetometer for Qibla), expo-location (GPS)
 
-Join our community of developers creating universal apps.
+## Running Locally
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+1. Clone the repository
+2. Run `npm install` to install dependencies
+3. Execute `npx expo start` to launch the Expo development server
+4. Connect via the Expo Go app on your physical device, or use an emulator.
