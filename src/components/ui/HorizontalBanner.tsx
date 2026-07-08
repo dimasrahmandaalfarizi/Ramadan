@@ -6,8 +6,11 @@ import { Spacing } from '../../constants/theme';
 import { Ionicons } from '@expo/vector-icons';
 
 const { width } = Dimensions.get('window');
-// width - 48 (container padding) - 16 (card marginRight)
-const CARD_WIDTH = width > 800 ? (800 - 48 - 16) : (width - 64);
+// Card width fills the container but container has a maxWidth.
+const CONTAINER_MAX_WIDTH = 500;
+const actualContainerWidth = Math.min(width, CONTAINER_MAX_WIDTH);
+// actual container width - 48 (padding) - 16 (margin right)
+const CARD_WIDTH = actualContainerWidth - 64;
 
 export function HorizontalBanner() {
   const { colors } = useAppTheme();
@@ -78,6 +81,9 @@ export function HorizontalBanner() {
 const styles = StyleSheet.create({
   container: {
     marginBottom: Spacing.xl,
+    maxWidth: CONTAINER_MAX_WIDTH,
+    alignSelf: 'center',
+    width: '100%',
   },
   sectionTitle: {
     marginBottom: Spacing.md,
