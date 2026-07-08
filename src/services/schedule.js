@@ -23,10 +23,10 @@ export async function getSchedule(city = 'Surabaya') {
 
     // Fetch Data Bulan Februari & Maret 2026
     const res1 = await fetch(
-      `http://api.aladhan.com/v1/calendarByCity/${currentYear}/${month1}?city=${city}&country=${country}&method=20`,
+      `https://api.aladhan.com/v1/calendarByCity/${currentYear}/${month1}?city=${city}&country=${country}&method=20`,
     );
     const res2 = await fetch(
-      `http://api.aladhan.com/v1/calendarByCity/${currentYear}/${month2}?city=${city}&country=${country}&method=20`,
+      `https://api.aladhan.com/v1/calendarByCity/${currentYear}/${month2}?city=${city}&country=${country}&method=20`,
     );
 
     if (!res1.ok || !res2.ok) {
