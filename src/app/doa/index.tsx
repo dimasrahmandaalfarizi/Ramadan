@@ -12,43 +12,9 @@ if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental
   UIManager.setLayoutAnimationEnabledExperimental(true);
 }
 
-const DOA_LIST = [
-  {
-    id: '1',
-    title: 'Doa Sebelum Tidur',
-    arab: 'بِسْمِكَ اللّٰهُمَّ اَحْيَا وَاَمُوْتُ',
-    latin: 'Bismikallôhumma ahyâ wa amûtu.',
-    arti: 'Dengan nama-Mu, ya Allah, aku hidup dan aku mati.'
-  },
-  {
-    id: '2',
-    title: 'Doa Bangun Tidur',
-    arab: 'اَلْحَمْدُ لِلّٰهِ الَّذِيْ اَحْيَانَا بَعْدَ مَا اَمَاتَنَا وَاِلَيْهِ النُّشُوْرُ',
-    latin: 'Alhamdu lillâhilladzî ahyânâ ba‘da mâ amâtanâ wa ilaihin nusyûr.',
-    arti: 'Segala puji bagi Allah yang telah menghidupkan kami setelah mematikan kami, dan kepada-Nya lah kebangkitan.'
-  },
-  {
-    id: '3',
-    title: 'Doa Sebelum Makan',
-    arab: 'اَللّٰهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ',
-    latin: 'Allâhumma bârik lanâ fîmâ razaqtanâ wa qinâ ‘adzâban nâr.',
-    arti: 'Ya Allah, berkahilah kami dalam rezeki yang telah Engkau berikan kepada kami dan peliharalah kami dari siksa api neraka.'
-  },
-  {
-    id: '4',
-    title: 'Doa Sesudah Makan',
-    arab: 'اَلْحَمْدُ لِلّٰهِ الَّذِيْ اَطْعَمَنَا وَسَقَانَا وَجَعَلَنَا مُسْلِمِيْنَ',
-    latin: 'Alhamdu lillâhilladzî ath‘amanâ wa saqônâ wa ja‘alanâ muslimîn.',
-    arti: 'Segala puji bagi Allah yang telah memberi kami makan dan minum, serta menjadikan kami orang-orang muslim.'
-  },
-  {
-    id: '5',
-    title: 'Doa Masuk Kamar Mandi',
-    arab: 'اَللّٰهُمَّ اِنِّيْ اَعُوْذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ',
-    latin: 'Allâhumma innî a‘ûdzu bika minal khubutsi wal khabâ’its.',
-    arti: 'Ya Allah, sesungguhnya aku berlindung kepada-Mu dari godaan setan laki-laki dan setan perempuan.'
-  }
-];
+import doaData from '../../data/doa.json';
+
+const DOA_LIST = doaData;
 
 export default function DoaListScreen() {
   const { colors } = useAppTheme();

@@ -6,43 +6,9 @@ import { Typography } from '../components/ui/Typography';
 import { Spacing } from '../constants/theme';
 import { Card } from '../components/ui/Card';
 
-const HADITS_LIST = [
-  {
-    id: '1',
-    title: 'Niat dan Ikhlas',
-    arab: 'إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى',
-    arti: 'Sesungguhnya amal itu tergantung pada niatnya, dan sesungguhnya setiap orang akan mendapatkan apa yang ia niatkan.',
-    perawi: 'HR. Bukhari & Muslim'
-  },
-  {
-    id: '2',
-    title: 'Meninggalkan yang Tidak Bermanfaat',
-    arab: 'مِنْ حُسْنِ إِسْلَامِ الْمَرْءِ تَرْكُهُ مَا لَا يَعْنِيهِ',
-    arti: 'Di antara kebaikan Islam seseorang adalah meninggalkan hal yang tidak bermanfaat baginya.',
-    perawi: 'HR. Tirmidzi'
-  },
-  {
-    id: '3',
-    title: 'Menahan Amarah',
-    arab: 'لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ، إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ',
-    arti: 'Orang yang kuat bukanlah yang pandai bergulat, namun orang yang kuat adalah yang mampu menahan dirinya ketika marah.',
-    perawi: 'HR. Bukhari & Muslim'
-  },
-  {
-    id: '4',
-    title: 'Berkata Baik atau Diam',
-    arab: 'مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ',
-    arti: 'Barangsiapa beriman kepada Allah dan hari akhir, maka berkatalah yang baik atau diam.',
-    perawi: 'HR. Bukhari & Muslim'
-  },
-  {
-    id: '5',
-    title: 'Senyum Adalah Sedekah',
-    arab: 'تَبَسُّمُكَ فِي وَجْهِ أَخِيكَ لَكَ صَدَقَةٌ',
-    arti: 'Senyummu di hadapan saudaramu adalah sedekah bagimu.',
-    perawi: 'HR. Tirmidzi'
-  }
-];
+import haditsData from '../data/hadits.json';
+
+const HADITS_LIST = haditsData;
 
 export default function HaditsScreen() {
   const { colors } = useAppTheme();

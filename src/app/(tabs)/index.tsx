@@ -158,6 +158,7 @@ export default function DashboardScreen() {
               <QuickAction icon="star" title="Doa Harian" color="#F59E0B" href="/doa" />
               <QuickAction icon="compass" title="Arah Kiblat" color="#3B82F6" href="/kiblat" />
               <QuickAction icon="library" title="Hadits" color="#8B5CF6" href="/hadits" />
+              <QuickAction icon="heart" title="Jurnal Haid" color="#EC4899" href="/haid" />
             </View>
 
             <DailyInspiration />
@@ -256,13 +257,16 @@ const styles = StyleSheet.create({
   },
   quickActionsContainer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+    justifyContent: 'flex-start',
+    gap: Spacing.md,
     marginBottom: Spacing.xxl,
     paddingHorizontal: Spacing.xs,
   },
   actionItem: {
     alignItems: 'center',
     width: '22%',
+    marginBottom: Spacing.sm,
   },
   actionIconArea: {
     width: 60,

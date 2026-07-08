@@ -1,0 +1,107 @@
+[
+  {
+    "id": "1",
+    "title": "Niat dan Ikhlas",
+    "arab": "إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ، وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى",
+    "arti": "Sesungguhnya amal itu tergantung pada niatnya, dan sesungguhnya setiap orang akan mendapatkan apa yang ia niatkan.",
+    "perawi": "HR. Bukhari & Muslim"
+  },
+  {
+    "id": "2",
+    "title": "Meninggalkan yang Tidak Bermanfaat",
+    "arab": "مِنْ حُسْنِ إِسْلَامِ الْمَرْءِ تَرْكُهُ مَا لَا يَعْنِيهِ",
+    "arti": "Di antara kebaikan Islam seseorang adalah meninggalkan hal yang tidak bermanfaat baginya.",
+    "perawi": "HR. Tirmidzi"
+  },
+  {
+    "id": "3",
+    "title": "Menahan Amarah",
+    "arab": "لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ، إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الْغَضَبِ",
+    "arti": "Orang yang kuat bukanlah yang pandai bergulat, namun orang yang kuat adalah yang mampu menahan dirinya ketika marah.",
+    "perawi": "HR. Bukhari & Muslim"
+  },
+  {
+    "id": "4",
+    "title": "Berkata Baik atau Diam",
+    "arab": "مَنْ كَانَ يُؤْمِنُ بِاللَّهِ وَالْيَوْمِ الْآخِرِ فَلْيَقُلْ خَيْرًا أَوْ لِيَصْمُتْ",
+    "arti": "Barangsiapa beriman kepada Allah dan hari akhir, maka berkatalah yang baik atau diam.",
+    "perawi": "HR. Bukhari & Muslim"
+  },
+  {
+    "id": "5",
+    "title": "Senyum Adalah Sedekah",
+    "arab": "تَبَسُّمُكَ فِي وَجْهِ أَخِيكَ لَكَ صَدَقَةٌ",
+    "arti": "Senyummu di hadapan saudaramu adalah sedekah bagimu.",
+    "perawi": "HR. Tirmidzi"
+  },
+  {
+    "id": "6",
+    "title": "Kebersihan Sebagian dari Iman",
+    "arab": "الطُّهُورُ شَطْرُ الْإِيمَانِ",
+    "arti": "Kebersihan (bersuci) itu adalah sebagian dari iman.",
+    "perawi": "HR. Muslim"
+  },
+  {
+    "id": "7",
+    "title": "Ridha Allah pada Ridha Orang Tua",
+    "arab": "رِضَا الرَّبِّ فِي رِضَا الْوَالِدِ، وَسَخَطُ الرَّبِّ فِي سَخَطِ الْوَالِدِ",
+    "arti": "Ridha Allah terletak pada ridha orang tua, dan murka Allah terletak pada kemurkaan orang tua.",
+    "perawi": "HR. Tirmidzi"
+  },
+  {
+    "id": "8",
+    "title": "Amalan yang Paling Dicintai",
+    "arab": "أَحَبُّ الْأَعْمَالِ إِلَى اللَّهِ تَعَالَى أَدْوَمُهَا وَإِنْ قَلَّ",
+    "arti": "Amalan yang paling dicintai oleh Allah adalah amalan yang berkelanjutan (rutin) walaupun sedikit.",
+    "perawi": "HR. Muslim"
+  },
+  {
+    "id": "9",
+    "title": "Keutamaan Mempelajari Al-Quran",
+    "arab": "خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ",
+    "arti": "Sebaik-baik kalian adalah orang yang mempelajari Al-Qur’an dan mengajarkannya.",
+    "perawi": "HR. Bukhari"
+  },
+  {
+    "id": "10",
+    "title": "Persaudaraan Sesama Muslim",
+    "arab": "الْمُسْلِمُ أَخُو الْمُسْلِمِ، لَا يَظْلِمُهُ وَلَا يُسْلِمُهُ",
+    "arti": "Seorang muslim adalah saudara bagi muslim lainnya, ia tidak menzhaliminya dan tidak pula menyerahkannya (kepada musuh).",
+    "perawi": "HR. Bukhari & Muslim"
+  },
+  {
+    "id": "11",
+    "title": "Agama Adalah Nasihat",
+    "arab": "الدِّيْنُ النَّصِيْحَةُ",
+    "arti": "Agama adalah nasihat (yaitu ikhlas kepada Allah, Kitab-Nya, Rasul-Nya, pemimpin umat, dan kaum awamnya).",
+    "perawi": "HR. Muslim"
+  },
+  {
+    "id": "12",
+    "title": "Malu Sebagian Dari Iman",
+    "arab": "وَالْحَيَاءُ شُعْبَةٌ مِنَ الْإِيمَانِ",
+    "arti": "Dan rasa malu itu adalah salah satu cabang dari iman.",
+    "perawi": "HR. Bukhari & Muslim"
+  },
+  {
+    "id": "13",
+    "title": "Keutamaan Memberi",
+    "arab": "الْيَدُ الْعُلْيَا خَيْرٌ مِنَ الْيَدِ السُّفْلَى",
+    "arti": "Tangan yang di atas (pemberi) lebih baik daripada tangan yang di bawah (penerima).",
+    "perawi": "HR. Bukhari & Muslim"
+  },
+  {
+    "id": "14",
+    "title": "Larangan Berbuat Dzalim",
+    "arab": "اتَّقُوا الظُّلْمَ، فَإِنَّ الظُّلْمَ ظُلُمَاتٌ يَوْمَ الْقِيَامَةِ",
+    "arti": "Jauhilah kezaliman, karena kezaliman itu adalah kegelapan pada hari kiamat.",
+    "perawi": "HR. Muslim"
+  },
+  {
+    "id": "15",
+    "title": "Kewajiban Menuntut Ilmu",
+    "arab": "طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ",
+    "arti": "Menuntut ilmu itu wajib atas setiap muslim.",
+    "perawi": "HR. Ibnu Majah"
+  }
+]
