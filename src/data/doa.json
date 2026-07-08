@@ -1,0 +1,142 @@
+[
+  {
+    "id": "1",
+    "title": "Doa Sebelum Tidur",
+    "arab": "بِسْمِكَ اللّٰهُمَّ اَحْيَا وَاَمُوْتُ",
+    "latin": "Bismikallôhumma ahyâ wa amûtu.",
+    "arti": "Dengan nama-Mu, ya Allah, aku hidup dan aku mati."
+  },
+  {
+    "id": "2",
+    "title": "Doa Bangun Tidur",
+    "arab": "اَلْحَمْدُ لِلّٰهِ الَّذِيْ اَحْيَانَا بَعْدَ مَا اَمَاتَنَا وَاِلَيْهِ النُّشُوْرُ",
+    "latin": "Alhamdu lillâhilladzî ahyânâ ba‘da mâ amâtanâ wa ilaihin nusyûr.",
+    "arti": "Segala puji bagi Allah yang telah menghidupkan kami setelah mematikan kami, dan kepada-Nya lah kebangkitan."
+  },
+  {
+    "id": "3",
+    "title": "Doa Sebelum Makan",
+    "arab": "اَللّٰهُمَّ بَارِكْ لَنَا فِيْمَا رَزَقْتَنَا وَقِنَا عَذَابَ النَّارِ",
+    "latin": "Allâhumma bârik lanâ fîmâ razaqtanâ wa qinâ ‘adzâban nâr.",
+    "arti": "Ya Allah, berkahilah kami dalam rezeki yang telah Engkau berikan kepada kami dan peliharalah kami dari siksa api neraka."
+  },
+  {
+    "id": "4",
+    "title": "Doa Sesudah Makan",
+    "arab": "اَلْحَمْدُ لِلّٰهِ الَّذِيْ اَطْعَمَنَا وَسَقَانَا وَجَعَلَنَا مُسْلِمِيْنَ",
+    "latin": "Alhamdu lillâhilladzî ath‘amanâ wa saqônâ wa ja‘alanâ muslimîn.",
+    "arti": "Segala puji bagi Allah yang telah memberi kami makan dan minum, serta menjadikan kami orang-orang muslim."
+  },
+  {
+    "id": "5",
+    "title": "Doa Masuk Kamar Mandi",
+    "arab": "اَللّٰهُمَّ اِنِّيْ اَعُوْذُ بِكَ مِنَ الْخُبُثِ وَالْخَبَائِثِ",
+    "latin": "Allâhumma innî a‘ûdzu bika minal khubutsi wal khabâ’its.",
+    "arti": "Ya Allah, sesungguhnya aku berlindung kepada-Mu dari godaan setan laki-laki dan setan perempuan."
+  },
+  {
+    "id": "6",
+    "title": "Doa Keluar Kamar Mandi",
+    "arab": "غُفْرَانَكَ الْحَمْدُ لِلّٰهِ الَّذِيْ اَذْهَبَ عَنِّي الْاَذَى وَعَافَانِيْ",
+    "latin": "Ghufrônaka, alhamdu lillâhilladzî adzhaba ‘annil adzâ wa ‘âfânî.",
+    "arti": "Dengan mengharap ampunan-Mu, segala puji milik Allah yang telah menghilangkan kotoran dari badanku dan yang telah menyejahterakan."
+  },
+  {
+    "id": "7",
+    "title": "Doa Masuk Masjid",
+    "arab": "اَللّٰهُمَّ افْتَحْ لِيْ اَبْوَابَ رَحْمَتِكَ",
+    "latin": "Allâhummaftah lî abwâba rahmatik.",
+    "arti": "Ya Allah, bukakanlah pintu-pintu rahmat-Mu untukku."
+  },
+  {
+    "id": "8",
+    "title": "Doa Keluar Masjid",
+    "arab": "اَللّٰهُمَّ اِنِّيْ اَسْاَلُكَ مِنْ فَضْلِكَ",
+    "latin": "Allâhumma innî as’aluka min fadlik.",
+    "arti": "Ya Allah, sesungguhnya aku memohon karunia-Mu."
+  },
+  {
+    "id": "9",
+    "title": "Doa Bercermin",
+    "arab": "اَللّٰهُمَّ كَمَا حَسَّنْتَ خَلْقِيْ فَحَسِّنْ خُلُقِيْ",
+    "latin": "Allâhumma kamâ hassanta khalqî fahassin khuluqî.",
+    "arti": "Ya Allah, sebagaimana Engkau telah membaguskan penciptaanku, maka baguskanlah pula akhlakku."
+  },
+  {
+    "id": "10",
+    "title": "Doa Keluar Rumah",
+    "arab": "بِسْمِ اللّٰهِ تَوَكَّلْتُ عَلَى اللّٰهِ لَا حَوْلَ وَلَا قُوَّةَ اِلَّا بِاللّٰهِ",
+    "latin": "Bismillâhi tawakkaltu ‘alallâhi lâ hawla wa lâ quwwata illâ billâh.",
+    "arti": "Dengan nama Allah, aku bertawakal kepada Allah. Tiada daya dan kekuatan kecuali dengan pertolongan Allah."
+  },
+  {
+    "id": "11",
+    "title": "Doa Memakai Pakaian",
+    "arab": "اَلْحَمْدُ لِلّٰهِ الَّذِى كَسَانِى هَذَا الثَّوْبَ وَرَزَقَنِيْهِ مِنْ غَيْرِ حَوْلٍ مِنِّى وَلاَ قُوَّةٍ",
+    "latin": "Alhamdu lillâhilladzî kasânî hâdzats tsauba wa razaqanîhi min ghairi hawlim minnî wa lâ quwwatin.",
+    "arti": "Segala puji bagi Allah yang telah memakaikan pakaian ini kepadaku dan mengaruniakannya kepadaku tanpa daya dan kekuatan dariku."
+  },
+  {
+    "id": "12",
+    "title": "Doa Melepas Pakaian",
+    "arab": "بِسْمِ اللّٰهِ الَّذِيْ لَا اِلٰهَ اِلَّا هُوَ",
+    "latin": "Bismillâhilladzî lâ ilâha illâ huwa.",
+    "arti": "Dengan nama Allah yang tiada Tuhan selain Dia."
+  },
+  {
+    "id": "13",
+    "title": "Doa Menjenguk Orang Sakit",
+    "arab": "لَا بَأْسَ طَهُوْرٌ اِنْ شَاءَ اللّٰهُ",
+    "latin": "Lâ ba'sa thahûrun in syâ'allâh.",
+    "arti": "Tidak mengapa, semoga sakitmu ini membersihkan dosamu, insya Allah."
+  },
+  {
+    "id": "14",
+    "title": "Doa Memohon Kemudahan",
+    "arab": "اَللَّهُمَّ لاَ سَهْلَ إِلاَّ مَا جَعَلْتَهُ سَهْلاً وَأَنْتَ تَجْعَلُ الحَزْنَ إِذَا شِئْتَ سَهْلاً",
+    "latin": "Allâhumma lâ sahla illâ mâ ja‘altahu sahlan wa anta taj‘alul hazna idzâ syi’ta sahlan.",
+    "arti": "Ya Allah, tidak ada kemudahan kecuali apa yang Engkau jadikan mudah, dan kesedihan (kesulitan) apabila Engkau kehendaki pasti akan Engkau jadikan mudah."
+  },
+  {
+    "id": "15",
+    "title": "Doa Tolak Bala",
+    "arab": "بِسْمِ اللّٰهِ الَّذِيْ لَا يَضُرُّ مَعَ اسْمِهِ شَيْءٌ فِي الْاَرْضِ وَلَا فِي السَّمَاءِ وَهُوَ السَّمِيْعُ الْعَلِيْمُ",
+    "latin": "Bismillâhilladzî lâ yadhurru ma‘asmihî syai'un fil ardhi wa lâ fis samâ'i wa huwas samî‘ul ‘alîm.",
+    "arti": "Dengan nama Allah yang tidak ada sesuatu pun di bumi dan di langit yang bisa memberikan bahaya bersama nama-Nya, dan Dia Maha Mendengar lagi Maha Mengetahui."
+  },
+  {
+    "id": "16",
+    "title": "Doa Keselamatan Dunia Akhirat",
+    "arab": "رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الْآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ",
+    "latin": "Rabbanâ âtinâ fid dun-yâ hasanah wa fil âkhirati hasanah wa qinâ ‘adzâban nâr.",
+    "arti": "Ya Tuhan kami, berilah kami kebaikan di dunia dan kebaikan di akhirat, serta peliharalah kami dari siksa neraka."
+  },
+  {
+    "id": "17",
+    "title": "Doa Mohon Ilmu Bermanfaat",
+    "arab": "اَللّٰهُمَّ اِنِّيْ اَسْاَلُكَ عِلْمًا نَافِعًا وَرِزْقًا طَيِّبًا وَعَمَلًا مُتَقَبَّلًا",
+    "latin": "Allâhumma innî as’aluka ‘ilman nâfi‘an wa rizqan thayyiban wa ‘amalan mutaqabbalan.",
+    "arti": "Ya Allah, sesungguhnya aku memohon kepada-Mu ilmu yang bermanfaat, rezeki yang baik, dan amal yang diterima."
+  },
+  {
+    "id": "18",
+    "title": "Doa Ketika Hujan",
+    "arab": "اَللّٰهُمَّ صَيِّبًا نَافِعًا",
+    "latin": "Allâhumma shayyiban nâfi‘an.",
+    "arti": "Ya Allah, turunkanlah hujan yang bermanfaat."
+  },
+  {
+    "id": "19",
+    "title": "Doa Setelah Wudhu",
+    "arab": "اَشْهَدُ اَنْ لَا اِلٰهَ اِلَّا اللّٰهُ وَحْدَهُ لَا شَرِيْكَ لَهُ وَاَشْهَدُ اَنَّ مُحَمَّدًا عَبْدُهُ وَرَسُوْلُهُ، اَللّٰهُمَّ اجْعَلْنِيْ مِنَ التَّوَّابِيْنَ وَاجْعَلْنِيْ مِنَ الْمُتَطَهِّرِيْنَ",
+    "latin": "Asyhadu allâ ilâha illallâh wahdahû lâ syarîka lah, wa asyhadu anna Muhammadan ‘abduhû wa rasûluh. Allâhummaj‘alnî minat tawwâbîna waj‘alnî minal mutathahhirîn.",
+    "arti": "Aku bersaksi bahwa tiada Tuhan selain Allah yang Maha Esa, tidak ada sekutu bagi-Nya. Dan aku bersaksi bahwa Muhammad adalah hamba dan utusan-Nya. Ya Allah, jadikanlah aku termasuk orang-orang yang bertaubat dan jadikanlah aku termasuk orang-orang yang menyucikan diri."
+  },
+  {
+    "id": "20",
+    "title": "Doa Naik Kendaraan",
+    "arab": "سُبْحَانَ الَّذِيْ سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِيْنَ وَاِنَّا اِلَى رَبِّنَا لَمُنْقَلِبُوْنَ",
+    "latin": "Subhânalladzî sakhkhara lanâ hâdzâ wa mâ kunnâ lahû muqrinîn, wa innâ ilâ rabbinâ lamunqalibûn.",
+    "arti": "Maha Suci Allah yang telah menundukkan semua ini bagi kami padahal kami sebelumnya tidak mampu menguasainya, dan sesungguhnya kami akan kembali kepada Tuhan kami."
+  }
+]
