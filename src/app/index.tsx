@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, ActivityIndicator, ScrollView, SafeAreaView, TouchableOpacity, Dimensions } from 'react-native';
+import { useRouter } from 'expo-router';
 import { useAppTheme } from '../hooks/useAppTheme';
 import { Spacing, Colors } from '../constants/theme';
 import { Typography } from '../components/ui/Typography';
@@ -21,6 +22,7 @@ const { width } = Dimensions.get('window');
 const isWeb = width > 800;
 
 export default function DashboardScreen() {
+  const router = useRouter();
   const { colors, isDark } = useAppTheme();
   const [schedule, setSchedule] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -84,8 +86,12 @@ export default function DashboardScreen() {
     }
   };
 
-  const QuickAction = ({ icon, title, color }: { icon: any, title: string, color: string }) => (
-    <TouchableOpacity activeOpacity={0.7} style={styles.actionItem}>
+  const QuickAction = ({ icon, title, color, href }: { icon: any, title: string, color: string, href: string }) => (
+    <TouchableOpacity 
+      activeOpacity={0.7} 
+      style={styles.actionItem}
+      onPress={() => router.push(href as any)}
+    >
       <View style={[styles.actionIconArea, { backgroundColor: color }]}>
         <Ionicons name={icon} size={28} color="#FFF" />
       </View>
@@ -148,10 +154,10 @@ export default function DashboardScreen() {
 
             {/* Quick Actions */}
             <View style={styles.quickActionsContainer}>
-              <QuickAction icon="book" title="Al-Quran" color="#10B981" />
-              <QuickAction icon="star" title="Doa Harian" color="#F59E0B" />
-              <QuickAction icon="compass" title="Arah Kiblat" color="#3B82F6" />
-              <QuickAction icon="library" title="Hadits" color="#8B5CF6" />
+              <QuickAction icon="book" title="Al-Quran" color="#10B981" href="/quran" />
+              <QuickAction icon="star" title="Doa Harian" color="#F59E0B" href="/doa" />
+              <QuickAction icon="compass" title="Arah Kiblat" color="#3B82F6" href="/kiblat" />
+              <QuickAction icon="library" title="Hadits" color="#8B5CF6" href="/hadits" />
             </View>
 
             <DailyInspiration />
