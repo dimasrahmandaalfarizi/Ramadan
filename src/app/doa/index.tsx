@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, StyleSheet, FlatList, TouchableOpacity, SafeAreaView, LayoutAnimation, Platform, UIManager } from 'react-native';
 import { Stack } from 'expo-router';
 import { useAppTheme } from '../../hooks/useAppTheme';
+import { useSettings } from '../../context/SettingsContext';
 import { Typography } from '../../components/ui/Typography';
 import { Ionicons } from '@expo/vector-icons';
 import { Spacing } from '../../constants/theme';
@@ -18,6 +19,7 @@ const DOA_LIST = doaData;
 
 export default function DoaListScreen() {
   const { colors } = useAppTheme();
+  const settings = useSettings();
   const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const toggleExpand = (id: string) => {
@@ -55,7 +57,7 @@ export default function DoaListScreen() {
             <Typography 
               variant="h2" 
               align="right" 
-              style={[styles.arabicText, { color: colors.text }]}
+              style={[styles.arabicText, { color: colors.text, fontSize: settings.getArabicFontSizeValue() - 16, lineHeight: settings.getArabicFontSizeValue() }]}
             >
               {item.arab}
             </Typography>

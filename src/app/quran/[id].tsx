@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, FlatList, ActivityIndicator, SafeAreaView, Dimensions } from 'react-native';
 import { useLocalSearchParams, Stack } from 'expo-router';
 import { useAppTheme } from '../../hooks/useAppTheme';
+import { useSettings } from '../../context/SettingsContext';
 import { Spacing } from '../../constants/theme';
 import { Typography } from '../../components/ui/Typography';
 
@@ -28,6 +29,7 @@ interface SurahDetail {
 export default function SurahDetailScreen() {
   const { id } = useLocalSearchParams();
   const { colors, isDark } = useAppTheme();
+  const settings = useSettings();
   const [surah, setSurah] = useState<SurahDetail | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -61,7 +63,7 @@ export default function SurahDetailScreen() {
       
       {/* Basmalah except for Surah At-Tawbah (9) */}
       {surah?.nomor !== 9 && surah?.nomor !== 1 && (
-        <Typography variant="h2" style={[styles.basmalah, { color: '#FFF' }]}>
+        <Typography variant="h2" style={[styles.basmalah, { color: '#FFF', fontSize: settings.getArabicFontSizeValue() - 16, lineHeight: settings.getArabicFontSizeValue() }]}>
           بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ
         </Typography>
       )}
@@ -79,7 +81,7 @@ export default function SurahDetailScreen() {
       <Typography 
         variant="h2" 
         align="right" 
-        style={[styles.arabicText, { color: colors.text }]}
+        style={[styles.arabicText, { color: colors.text, fontSize: settings.getArabicFontSizeValue() - 8, lineHeight: settings.getArabicFontSizeValue() + 10 }]}
       >
         {item.teksArab}
       </Typography>

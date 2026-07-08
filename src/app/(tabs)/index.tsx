@@ -10,6 +10,7 @@ import { DailyInspiration } from '../../components/ui/DailyInspiration';
 import { RamadanProgress } from '../../components/ui/RamadanProgress';
 import { HorizontalBanner } from '../../components/ui/HorizontalBanner';
 import { getSchedule } from '../../services/schedule';
+import { useSettings } from '../../context/SettingsContext';
 import { Ionicons } from '@expo/vector-icons';
 import dayjs from 'dayjs';
 import isBetween from 'dayjs/plugin/isBetween';
@@ -28,11 +29,12 @@ export default function DashboardScreen() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [nextPrayer, setNextPrayer] = useState<{name: string, time: string} | null>(null);
+  const settings = useSettings();
 
   useEffect(() => {
     async function loadSchedule() {
       try {
-        const data = await getSchedule('Surabaya');
+        const data = await getSchedule(settings.prayerLocation);
         const todayIso = dayjs().format('YYYY-MM-DD');
         let todayData = data.schedule.find(
           (item: any) => dayjs(item.isoDate).format('YYYY-MM-DD') === todayIso
@@ -51,7 +53,7 @@ export default function DashboardScreen() {
       }
     }
     loadSchedule();
-  }, []);
+  }, [settings.prayerLocation]);
 
   const calculateNextPrayer = (timings: any) => {
     if (!timings) return;
@@ -108,9 +110,11 @@ export default function DashboardScreen() {
         {/* Header */}
         <View style={styles.header}>
           <View>
-            <Typography variant="h2" weight="bold">Assalamu'alaikum,</Typography>
-            <Typography variant="body" color="secondary" style={{ marginTop: Spacing.xs }}>
-              Surabaya, Indonesia
+            <Typography variant="h2" weight="bold">
+              Halo, {settings.userName || 'Hamba Allah'}
+            </Typography>
+            <Typography variant="body" color="secondary">
+              {settings.prayerLocation}
             </Typography>
           </View>
           <ThemeToggle />

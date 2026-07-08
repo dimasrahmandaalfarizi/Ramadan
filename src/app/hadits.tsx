@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet, FlatList, SafeAreaView } from 'react-native';
 import { Stack } from 'expo-router';
 import { useAppTheme } from '../hooks/useAppTheme';
+import { useSettings } from '../context/SettingsContext';
 import { Typography } from '../components/ui/Typography';
 import { Spacing } from '../constants/theme';
 import { Card } from '../components/ui/Card';
@@ -12,6 +13,7 @@ const HADITS_LIST = haditsData;
 
 export default function HaditsScreen() {
   const { colors } = useAppTheme();
+  const settings = useSettings();
 
   const renderItem = ({ item }: { item: typeof HADITS_LIST[0] }) => (
     <Card style={styles.card} padding="lg">
@@ -29,7 +31,7 @@ export default function HaditsScreen() {
       <Typography 
         variant="h2" 
         align="right" 
-        style={[styles.arabicText, { color: colors.text }]}
+        style={[styles.arabicText, { color: colors.text, fontSize: settings.getArabicFontSizeValue() - 16, lineHeight: settings.getArabicFontSizeValue() }]}
       >
         {item.arab}
       </Typography>
