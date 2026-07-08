@@ -13,7 +13,11 @@ const fs = require('fs');
 
   console.log('Navigating to Home...');
   await page.goto('http://localhost:8081/');
-  await page.waitForTimeout(3000);
+  try {
+    await page.waitForSelector('text=Imsak', { timeout: 15000 });
+  } catch (e) {
+    console.log('Timeout waiting for Imsak, taking screenshot anyway');
+  }
   await page.screenshot({ path: 'assets/screenshots/home.png' });
 
   console.log('Navigating to Quran...');

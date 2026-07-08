@@ -18,44 +18,21 @@
 
 ## Preview
 
-Below are the screenshots showcasing the application's clean, modern, and accessible user interface.
-
-### Home & Dashboard
-The main dashboard provides dynamic prayer schedules based on the user's location, a progress tracker for Ramadan, and quick action menus for primary features.
-
 <p align="center">
-  <img src="./assets/screenshots/home.png" width="300" alt="Home Dashboard">
+  <img src="./assets/screenshots/home.png" width="18%" alt="Home Dashboard">
+  <img src="./assets/screenshots/quran.png" width="18%" alt="Digital Al-Quran">
+  <img src="./assets/screenshots/doa.png" width="18%" alt="Daily Prayers">
+  <img src="./assets/screenshots/haid.png" width="18%" alt="Menstruation Tracker">
+  <img src="./assets/screenshots/settings.png" width="18%" alt="Advanced Settings">
 </p>
 
-### Digital Al-Quran
-A beautifully formatted Quran reader fetching real-time data from equran.id API, featuring customizable Arabic font sizes for better readability.
+### Features Overview
 
-<p align="center">
-  <img src="./assets/screenshots/quran.png" width="300" alt="Digital Al-Quran">
-</p>
-
-### Daily Prayers & Selected Hadith
-An offline-first collection of essential daily prayers and selected Hadith, loading instantly via local JSON data.
-
-<p align="center">
-  <img src="./assets/screenshots/doa.png" width="300" alt="Daily Prayers">
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="./assets/screenshots/hadits.png" width="300" alt="Selected Hadith">
-</p>
-
-### Menstruation Tracker (Jurnal Haid)
-An inclusive feature designed to help women track missed fasting days (Qadha) and discover alternative acts of worship during their cycle.
-
-<p align="center">
-  <img src="./assets/screenshots/haid.png" width="300" alt="Menstruation Tracker">
-</p>
-
-### Advanced Settings
-A highly customizable user experience allowing users to toggle Dark Mode, adjust Arabic font sizes, and modify prayer calculation parameters.
-
-<p align="center">
-  <img src="./assets/screenshots/settings.png" width="300" alt="Advanced Settings">
-</p>
+- **Home & Dashboard:** Dynamic prayer schedules based on the user's location, a progress tracker for Ramadan, and quick action menus for primary features.
+- **Digital Al-Quran:** A beautifully formatted Quran reader fetching real-time data from equran.id API, featuring customizable Arabic font sizes for better readability.
+- **Daily Prayers & Selected Hadith:** An offline-first collection of essential daily prayers and selected Hadith, loading instantly via local JSON data.
+- **Menstruation Tracker (Jurnal Haid):** An inclusive feature designed to help women track missed fasting days (Qadha) and discover alternative acts of worship during their cycle.
+- **Advanced Settings:** A highly customizable user experience allowing users to toggle Dark Mode, adjust Arabic font sizes, and modify prayer calculation parameters.
 
 ---
 
